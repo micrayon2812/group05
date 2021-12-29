@@ -1,0 +1,9 @@
+.fade {
+    opacity: 1;
+  }
+
+.bor-blue{
+  border-bottom-left-radius: 10%;
+  border-style: groove;
+  border: blue;
+}
