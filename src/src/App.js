@@ -11,6 +11,7 @@ import Record from "./Record";
 import TreeStore from './TreeStore';
 import Mybook from './Mybook';
 import Edit from "./EditProfile";
+import Signup from "./Signup";
 
 function App() {
   const path = window.location.pathname;
@@ -29,6 +30,7 @@ function App() {
           </div>
         }
     <Route exact path="/Home" component={Home} />
+    <Route exact path="/Signup" component={Signup} />
     <Route exact path="/Category" component={Category} />
     <Route exact path="/Aboutus" component={Aboutus} />
     <Route exact path="/Profile" component={Account} />
