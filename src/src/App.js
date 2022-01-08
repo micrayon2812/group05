@@ -20,28 +20,28 @@ function App() {
   return (
     <AuthProvider>
       <div>
-      <Route exact path="/" exact component={Login} />
-        {path !== '/' &&
-          <div>
-            <Navbar />
-          </div>
-        }
-        {path !== '/' && path !=='/Home' &&  path !=='/Account' &&
-          <div>
-            <Navbar2 />
-          </div>
-        }
-    <Route exact path="/Home" component={Home} />
-    <Route exact path="/Signup" component={Signup} />
-    <Route exact path="/Category" component={Category} />
-    <Route exact path="/Aboutus" component={Aboutus} />
-    <Route exact path="/Profile" component={Account} />
-    <Route exact path="/Record" component={Record} />
-    <Route exact path="/TreeStore" component={TreeStore} />
-    <Route exact path="/MyBook" component={Mybook} />
-    <Route exact path="/EditProfile" component={Edit} />
-
-    </div>
+        <Route exact path="/" exact component={Login} />
+          {path !== '/' &&
+            <div>
+              <Navbar />
+            </div>
+          }
+          {path !== '/' && path !=='/Home' &&  path !=='/Account' &&
+            <div>
+              <Navbar2 />
+            </div>
+          }
+        <Route exact path="/Home" component={Home} />
+        <Route exact path="/Signup" component={Signup} />
+        <Route exact path="/Login" component={Login} />
+        <Route exact path="/Category" component={Category} />
+        <Route exact path="/Aboutus" component={Aboutus} />
+        <Route exact path="/Profile" component={Account} />
+        <Route exact path="/Record" component={Record} />
+        <Route exact path="/TreeStore" component={TreeStore} />
+        <Route exact path="/MyBook" component={Mybook} />
+        <Route exact path="/EditProfile" component={Edit} />
+      </div>
     </AuthProvider>
   );
 }
