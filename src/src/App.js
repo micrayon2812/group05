@@ -12,12 +12,14 @@ import TreeStore from './TreeStore';
 import Mybook from './Mybook';
 import Edit from "./EditProfile";
 import Signup from "./Signup";
+import { AuthProvider } from './contexts/AuthContext';
 
 function App() {
   const path = window.location.pathname;
 
   return (
-    <div>
+    <AuthProvider>
+      <div>
       <Route exact path="/" exact component={Login} />
         {path !== '/' &&
           <div>
@@ -40,6 +42,7 @@ function App() {
     <Route exact path="/EditProfile" component={Edit} />
 
     </div>
+    </AuthProvider>
   );
 }
 
