@@ -52,7 +52,7 @@ function Signup() {
                                 <BsLinkedin />
                             </div>
                         </div>
-                        {JSON.stringify(currentUser)}
+                        {currentUser && currentUser.email}
                         <div class="row px-3 mb-4">
                             <div class="line"></div> <small class="or text-center">Or</small>
                             <div class="line"></div>
