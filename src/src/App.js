@@ -11,7 +11,7 @@ import Record from "./Record";
 import TreeStore from './TreeStore';
 import Mybook from './Mybook';
 import Edit from "./EditProfile";
-
+import Entertainment from './Categories/Entertainment';
 function App() {
   const path = window.location.pathname;
 
@@ -36,6 +36,7 @@ function App() {
     <Route exact path="/TreeStore" component={TreeStore} />
     <Route exact path="/MyBook" component={Mybook} />
     <Route exact path="/EditProfile" component={Edit} />
+    <Route exact path="/Entertainment" component={Entertainment} />
 
     </div>
   );
