@@ -1,10 +1,30 @@
-import React from 'react'
-import {Link} from "react-router-dom";
+import React, {useRef, useState} from 'react'
+import {Link, useHistory} from "react-router-dom";
 import {BsFacebook, BsTwitter, BsLinkedin} from "react-icons/bs";
+import {useAuth} from "./contexts/AuthContext";
+import {Alert} from "react-bootstrap"
 
 function Login() {
+    const emailRef = useRef()
+    const passwordRef = useRef()
+    const {login} = useAuth()
+    const [error, setError] = useState('')
+    const [loading, setLoading] = useState(false)
+    const history = useHistory()
+
+    async function handleSubmit(e) {
+        e.preventDefault()
+        try {
+            await login(emailRef.current.value, passwordRef.current.value)
+            history.push("/Home")
+        } catch {
+            setError('Failed to log in')
+        }
+        setLoading(false)
+    }
+
     return (
-        <div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+    <div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
         <div class="card card0 border-0">
             <div class="row d-flex">
                 <div class="col-lg-6">
@@ -16,7 +36,7 @@ function Login() {
                 <div class="col-lg-6">
                     <div class="card2 card border-0 px-4 py-5">
                         <div class="row mb-4 px-3">
-                            <h6 class="mb-0 mr-4 mt-2">Sign in with</h6>
+                            <h6 class="mb-0 mr-4 mt-2">Sign up with</h6>
                             <div class="facebook text-center mr-3">
                                 <BsFacebook />
                             </div>
@@ -27,21 +47,27 @@ function Login() {
                                 <BsLinkedin />
                             </div>
                         </div>
-                        <div class="row px-3 mb-4">
-                            <div class="line"></div> <small class="or text-center">Or</small>
-                            <div class="line"></div>
-                        </div>
-                        <div class="row px-3"> <label class="mb-1">
-                                <h6 class="mb-0 text-sm">User Name</h6>
-                            </label> <input class="mb-4" type="text" name="username" placeholder="Enter the name you want to show" required/> </div>
-                        <div class="row px-3"> <label class="mb-1">
-                                <h6 class="mb-0 text-sm">Password</h6>
-                            </label> <input type="password" name="password" placeholder="Enter password" required/> </div>
-                        <div class="row px-3 mb-4">
-                            <div class="custom-control custom-checkbox custom-control-inline"> <input id="chk1" type="checkbox" name="chk" class="custom-control-input" /> <label for="chk1" class="custom-control-label text-sm">Remember me</label> </div> <a href="#" class="ml-auto mb-0 text-sm">Forgot Password?</a>
-                        </div>
-                        <div class="row mb-3 px-3" style={{color:`white`}}> <a href="/Home" class="btn btn-blue text-center" >Login</a></div>
-                        <div class="row mb-4 px-3"> <small class="font-weight-bold">Don't have an account? <a class="text-danger " href="/Signup">Register</a></small> </div>
+                        <form onSubmit={handleSubmit}>
+                            <div class="row px-3 mb-4">
+                                <div class="line"></div> <small class="or text-center">Or</small>
+                                <div class="line"></div>
+                            </div>
+                            <div class="form-group px-3" id="username"> <label class="mb-1">
+                                    <h6 class="mb-0 text-sm">User Name</h6>
+                                </label> <input class="form-control mb-4" type="text" name="username" placeholder="Enter the name you want to show" required/> </div>
+                            <div class="form-group px-3" id="email"> <label class="mb-1">
+                                    <h6 class="mb-0 text-sm">Email Address</h6>
+                                </label> <input class="form-control mb-4" type="text" ref={emailRef} name="email" placeholder="Enter a valid email address" required/> </div>
+                            <div class="form-group px-3" id="password"> <label class="mb-1">
+                                    <h6 class="mb-0 text-sm">Password</h6>
+                                </label> <input class="form-control mb-4" type="password" ref={passwordRef} name="password" placeholder="Enter password" required/> </div>
+                            <div class="row px-3 mb-4">
+                                <div class="form-check custom-control custom-checkbox custom-control-inline"> <input id="chk1" type="checkbox" name="chk" class="custom-control-input" /> <label for="chk1" class="form-check-label custom-control-label text-sm">Remember me</label> </div> 
+                            </div>
+                            {error && <Alert variant="danger">{error}</Alert>}
+                            <div class="row mb-3 px-3" style={{color:`white`}}> <button type="submit" class="btn btn-blue text-center" disable={loading}><a href="/Home">Log in</a></button></div>
+                            <div class="row mb-4 px-3"> <small class="font-weight-bold">Don't have an account? <Link class="text-danger" to="/Signup">Register</Link></small> </div>
+                        </form>
                     </div>
                 </div>
             </div>

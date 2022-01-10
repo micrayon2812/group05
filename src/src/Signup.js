@@ -2,16 +2,16 @@ import React, {useRef, useState} from 'react'
 import {Link, useHistory} from "react-router-dom";
 import {BsFacebook, BsTwitter, BsLinkedin} from "react-icons/bs";
 import {useAuth} from "./contexts/AuthContext";
-import {Form, Button, Card, Alert} from "react-bootstrap"
+import {Alert} from "react-bootstrap"
 
 function Signup() {
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
-    const {signup, currentUser} = useAuth()
+    const {signup} = useAuth()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
-    //const history = useHistory()
+    const history = useHistory()
 
     async function handleSubmit(e) {
         e.preventDefault()
@@ -23,7 +23,7 @@ function Signup() {
 
         try {
             await signup(emailRef.current.value, passwordRef.current.value)
-            //history.push("/")
+            history.push("/Home")
         } catch {
             setError('Failed to create an account')
         }
@@ -31,7 +31,7 @@ function Signup() {
     }
 
     return (
-        <div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+    <div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
         <div class="card card0 border-0">
             <div class="row d-flex">
                 <div class="col-lg-6">
@@ -54,7 +54,6 @@ function Signup() {
                                 <BsLinkedin />
                             </div>
                         </div>
-                        {currentUser && currentUser.email}
                         <form onSubmit={handleSubmit}>
                             <div class="row px-3 mb-4">
                                 <div class="line"></div> <small class="or text-center">Or</small>
@@ -79,6 +78,11 @@ function Signup() {
                             <div class="row mb-3 px-3" style={{color:`white`}}> <button type="submit" class="btn btn-blue text-center" disable={loading}>Sign up</button></div>
                         </form>
                     </div>
+                </div>
+            </div>
+            <div class="bg-blue py-4">
+                <div class="row px-3"> <small class="ml-4 ml-sm-5 mb-2">Copyright &copy; 2021. All rights reserved.</small>
+                    <div class="social-contact ml-4 ml-sm-auto"> <span class="fa fa-facebook mr-4 text-sm"></span> <span class="fa fa-google-plus mr-4 text-sm"></span> <span class="fa fa-linkedin mr-4 text-sm"></span> <span class="fa fa-twitter mr-4 mr-sm-5 text-sm"></span> </div>
                 </div>
             </div>
         </div>
