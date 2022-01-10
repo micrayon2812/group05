@@ -17,16 +17,16 @@ import { AuthProvider } from './contexts/AuthContext';
 function App() {
   const path = window.location.pathname;
 
-  return (
-    <AuthProvider>
-      <div>
+  return ( 
+    <div>
+      <AuthProvider>
         <Route exact path="/" exact component={Login} />
-          {path !== '/' &&
+        {path !== '/' && path !== '/Signup' && path !== '/Login' &&
             <div>
               <Navbar />
             </div>
           }
-          {path !== '/' && path !=='/Home' &&  path !=='/Account' &&
+          {path !== '/' && path !== '/Signup' && path !== '/Login' && path !=='/Home' &&  path !=='/Account' &&
             <div>
               <Navbar2 />
             </div>
@@ -41,8 +41,9 @@ function App() {
         <Route exact path="/TreeStore" component={TreeStore} />
         <Route exact path="/MyBook" component={Mybook} />
         <Route exact path="/EditProfile" component={Edit} />
-      </div>
-    </AuthProvider>
+      </AuthProvider>
+    </div>
+    
   );
 }
 
