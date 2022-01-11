@@ -4,21 +4,28 @@ import {BsFacebook, BsTwitter, BsLinkedin} from "react-icons/bs";
 import {useAuth} from "./contexts/AuthContext";
 import {Alert} from "react-bootstrap"
 
-function Login() {
+function Signup() {
     const emailRef = useRef()
     const passwordRef = useRef()
-    const {login} = useAuth()
+    const passwordConfirmRef = useRef()
+    const {signup} = useAuth()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
     const history = useHistory()
 
     async function handleSubmit(e) {
         e.preventDefault()
+        if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+            setError('')
+            setLoading(true)
+            return setError('Password does not match')
+        }
+
         try {
-            await login(emailRef.current.value, passwordRef.current.value)
+            await signup(emailRef.current.value, passwordRef.current.value)
             history.push("/Home")
         } catch {
-            setError('Failed to log in')
+            setError('Failed to create an account')
         }
         setLoading(false)
     }
@@ -61,12 +68,14 @@ function Login() {
                             <div class="form-group px-3" id="password"> <label class="mb-1">
                                     <h6 class="mb-0 text-sm">Password</h6>
                                 </label> <input class="form-control mb-4" type="password" ref={passwordRef} name="password" placeholder="Enter password" required/> </div>
+                            <div class="form-group px-3" id="retypepassword"> <label class="mb-1">
+                                    <h6 class="mb-0 text-sm">Retype password</h6>
+                                </label> <input class="form-control mb-4" type="password" ref={passwordConfirmRef} name="retypepassword" placeholder="Enter password again" required/> </div>
                             <div class="row px-3 mb-4">
                                 <div class="form-check custom-control custom-checkbox custom-control-inline"> <input id="chk1" type="checkbox" name="chk" class="custom-control-input" /> <label for="chk1" class="form-check-label custom-control-label text-sm">Remember me</label> </div> 
                             </div>
                             {error && <Alert variant="danger">{error}</Alert>}
-                            <div class="row mb-3 px-3" style={{color:`white`}}> <button type="submit" class="btn btn-blue text-center" disable={loading}><a href="/Home">Log in</a></button></div>
-                            <div class="row mb-4 px-3"> <small class="font-weight-bold">Don't have an account? <Link class="text-danger" to="/Signup">Register</Link></small> </div>
+                            <div class="row mb-3 px-3" style={{color:`white`}}> <button type="submit" class="btn btn-blue text-center" disable={loading}>Sign up</button></div>
                         </form>
                     </div>
                 </div>
@@ -81,4 +90,4 @@ function Login() {
     )
 }
 
-export default Login
+export default Signup

@@ -11,33 +11,39 @@ import Record from "./Record";
 import TreeStore from './TreeStore';
 import Mybook from './Mybook';
 import Edit from "./EditProfile";
+import Signup from "./Signup";
+import { AuthProvider } from './contexts/AuthContext';
 
 function App() {
   const path = window.location.pathname;
 
-  return (
+  return ( 
     <div>
-      <Route exact path="/" exact component={Login} />
-        {path !== '/' &&
-          <div>
-            <Navbar />
-          </div>
-        }
-        {path !== '/' && path !=='/Home' &&  path !=='/Account' &&
-          <div>
-            <Navbar2 />
-          </div>
-        }
-    <Route exact path="/Home" component={Home} />
-    <Route exact path="/Category" component={Category} />
-    <Route exact path="/Aboutus" component={Aboutus} />
-    <Route exact path="/Profile" component={Account} />
-    <Route exact path="/Record" component={Record} />
-    <Route exact path="/TreeStore" component={TreeStore} />
-    <Route exact path="/MyBook" component={Mybook} />
-    <Route exact path="/EditProfile" component={Edit} />
-
+      <AuthProvider>
+        <Route exact path="/" exact component={Login} />
+        {path !== '/' && path !== '/Signup' && path !== '/Login' &&
+            <div>
+              <Navbar />
+            </div>
+          }
+          {path !== '/' && path !== '/Signup' && path !== '/Login' && path !=='/Home' &&  path !=='/Account' &&
+            <div>
+              <Navbar2 />
+            </div>
+          }
+        <Route exact path="/Home" component={Home} />
+        <Route exact path="/Signup" component={Signup} />
+        <Route exact path="/Login" component={Login} />
+        <Route exact path="/Category" component={Category} />
+        <Route exact path="/Aboutus" component={Aboutus} />
+        <Route exact path="/Profile" component={Account} />
+        <Route exact path="/Record" component={Record} />
+        <Route exact path="/TreeStore" component={TreeStore} />
+        <Route exact path="/MyBook" component={Mybook} />
+        <Route exact path="/EditProfile" component={Edit} />
+      </AuthProvider>
     </div>
+    
   );
 }
 
