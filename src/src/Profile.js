@@ -4,28 +4,48 @@ import ava from "./img/profile-0-Enhanced-Animated.gif"
 import tree from "./img/tree.gif"
 import {Route, Link} from "react-router-dom";
 import Edit from "./EditProfile";
+import { auth } from './firebase';
+import {database} from "./Database/Firebase"
+import { useState } from 'react';
 
 function Account() {
+    const [info , setInfo] = useState([]);
+
+    const user = auth.currentUser;
+    GetInfo(user.email);
+    
+    function GetInfo (usermail){
+    database.collection("User").get().then((querySnapshot) => {
+        querySnapshot.forEach(element => {
+            var data = element.data();
+            if (data.email == usermail){
+                setInfo(data);
+            }
+              
+        });
+                
+
+    })
+ 
+}   
     return (
+         
         <div class="container emp-profile">
             <form method="post">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-img">
-                            <img src={ava} alt=""/>
-                            <div class="file btn btn-lg btn-primary">
-                                Change Photo
-                                <input type="file" name="file"/>
-                            </div>
+                            <img src={info.avatar} alt=""/>
+                       
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="profile-head">
                                     <h5>
-                                        Quách Khôi
+                                        {info.name}
                                     </h5>
                                     <h6>
-                                    World Champion
+                                        User
                                     </h6>
                                     <p class="proile-rating">Plant progress : <span>100%</span></p>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -33,10 +53,10 @@ function Account() {
                                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="home" aria-selected="true">About</a>
                                 </li>
                                 <li class="nav-item Acc">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#tree" role="tab" aria-controls="profile" aria-selected="false">Planting</a>
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#tree" role="tab" aria-controls="trees" aria-selected="false">Planting</a>
                                 </li>
                                 <li class="nav-item Acc">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#lib" role="tab" aria-controls="profile" aria-selected="false">Library</a>
+                                    <a class="nav-link" id="library-tab" data-toggle="tab" href="#lib" role="tab" aria-controls="library" aria-selected="false">Library</a>
                                 </li>
                             </ul>
                         </div>
@@ -63,20 +83,21 @@ function Account() {
                     <div class="col-md-8">
                         <div class="tab-content profile-tab" id="myTabContent">
                             <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="home-tab">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>User Id</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>QuachKhoi123</p>
-                                            </div>
-                                        </div>
+                                      
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label>Name</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Quách Khôi</p>
+                                                <p>{info.name}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Age</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{info.age}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -84,7 +105,7 @@ function Account() {
                                                 <label>Email</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>quachkhoi@gmail.com</p>
+                                                <p>{info.email}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -92,7 +113,7 @@ function Account() {
                                                 <label>Phone</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>123 456 789</p>
+                                                <p>{info.phone}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -100,16 +121,17 @@ function Account() {
                                                 <label>Profession</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Web Developer and Designer</p>
+                                                <p>{info.profession}</p>
                                             </div>
                                         </div>
                             </div>
-                            <div class="tab-pane fade" id="tree" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="tab-pane fade show" id="tree" role="tabpanel" aria-labelledby="profile-tab">
                                    <img src={tree} />
                             </div>
-                            <div class="tab-pane fade" id="tree" role="tabpanel" aria-labelledby="profile-tab">
-                                   <img src={tree} />
+                            <div class="tab-pane fade show" id="libr" role="tabpanel" aria-labelledby="library-tab">
+                                   <p>aaaaaaa</p>
                             </div>
+                    
                         </div>
                     </div>
                 </div>

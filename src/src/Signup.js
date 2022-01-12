@@ -3,7 +3,7 @@ import {Link, useHistory} from "react-router-dom";
 import {BsFacebook, BsTwitter, BsLinkedin} from "react-icons/bs";
 import {useAuth} from "./contexts/AuthContext";
 import {Alert} from "react-bootstrap"
-
+import {database} from "./Database/Firebase"
 function Signup() {
     const emailRef = useRef()
     const passwordRef = useRef()
@@ -11,8 +11,21 @@ function Signup() {
     const {signup} = useAuth()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
-    const history = useHistory()
+    const history = useHistory();
+    async function createprofile (mail) {
+        // e.preventDefault();
+        database.collection("User").add({
+          name: "User",
+          age:"20",
+          email: mail,
+          treeid:"1",
+          level:"1",
+          phone:"1",
+          profession:"1",
+          avatar:"https://firebasestorage.googleapis.com/v0/b/rebook-67249.appspot.com/o/Avatar%2F138-1388174_login-account-icon.png?alt=media&token=3638e8f2-02c0-426f-b3e7-c23daa525e66"
+        });
 
+      };
     async function handleSubmit(e) {
         e.preventDefault()
         if (passwordRef.current.value !== passwordConfirmRef.current.value) {
@@ -23,7 +36,9 @@ function Signup() {
 
         try {
             await signup(emailRef.current.value, passwordRef.current.value)
+            createprofile(emailRef.current.value)
             history.push("/Home")
+
         } catch {
             setError('Failed to create an account')
         }

@@ -508,9 +508,8 @@ function Record() {
             SetCategory(e.target.value);
           }}
         >
-          <option selected value="1" > 
-            Arts &amp; Music
-          </option>
+          <option selected value="0">Category</option>
+          <option value="1" > Arts &amp; Music</option>
           <option value="2">Biographies</option>
           <option value="3">Comics</option>
           <option value="4">Computers &amp; Tech</option>

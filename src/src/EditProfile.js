@@ -1,140 +1,146 @@
-// import React from "react"
-// import "./EditProfile.css";
-// import {Route, Link} from "react-router-dom";
-// import "./index";
-// import firebase from 'firebase/compat/app';
-// import 'firebase/compat/firestore';
-// import { render } from "@testing-library/react";
+import React from 'react'
+import "./Profile.css";
+import ava from "./img/profile-0-Enhanced-Animated.gif"
+import tree from "./img/tree.gif"
+import {Route, Link} from "react-router-dom";
+import Edit from "./EditProfile";
+import { auth } from './firebase';
+import {database} from "./Database/Firebase"
+import { useState } from 'react';
 
-// const firebaseConfig = {
-//     apiKey: "AIzaSyBrwCV5VZMrYP53rUd0RLpLpxUqQSPY6jE",
-//     authDomain: "rebook-4261f.firebaseapp.com",
-//     projectId: "rebook-4261f",
-//     storageBucket: "rebook-4261f.appspot.com",
-//     messagingSenderId: "302684411026",
-//     appId: "1:302684411026:web:be876d0ac01f1b51bd424b",
-//     measurementId: "G-WD7MNZX6ZJ"
-//   };
-// firebase.initializeApp(firebaseConfig);
-// const database = firebase.firestore();
+function Account() {
+    const [info , setInfo] = useState([]);
 
-// function Edit(){
-//         const [userId, setId] = React.useState("");
-//         const [userName, setName] = React.useState("");
-//         const [email, setEmail] = React.useState("");
-//         const [phoneNum, setPhone] = React.useState("");
-//         const [professions, setProfessions] = React.useState("");
-
-//         const db = firebase.firestore();
-
-//         const getUserId= (event) => {
-//             setId(event.target.userId);  
-//         };
-//         const getUserName= (event) => {
-//             setName(event.target.userName);  
-//         };
-//         const getEmail= (event) => {
-//             setEmail(event.target.email);  
-//         };
-//         const getPhoneNum= (event) => {
-//             setPhone(event.target.phoneNum);  
-//         };
-//         const getProfessions= (event) => {
-//             setProfessions(event.target.professions);  
-//         };
-      
-//         function updateBtn(e){
-//             e.preventDefault();
-//             db.collection('users').doc('01').set({
-//                 Name: 'userName',
-//                 Mail: 'email',
-//                 Phone: 'phoneNum',
-//                 Professions: 'professions'
-//             })
-//             .then( () => {console.log("Successfully written!");})
-//             .catch( (error) => {console.error("Error", error);})
-//             return e.preventDefault();
-//         };
+    const user = auth.currentUser;
+    GetInfo(user.email);
     
-//     /*function updateBtn( (e) => {
-//         e.preventDefault();
-//         usersCollection.doc(userId.value).set({
-//             userName:  userName.value,
-//             email: email.value,
-//             phoneNum: phoneNum.value,
-//             professions: professions.value
-//         })
-//         .then( () => {console.log('Update profile successfully');})
-//         .catch(error => {console.log(error);})
-//         return e.preventDefault();
-//     }[userName.value,email.value,phoneNum.value,professions.value];
-// */
-//     render()
-//     return (
-//         <div class="container emp-profile">
-//             <div class="row">
-//                 <div class="col-md-4">
-//                     <div class="profile-work">
-//                         <p>WORK LINK</p>
-//                         <a href="">Website Link</a><br/>
-//                         <a href="">Bootsnipp Profile</a><br/>
-//                         <a href="">Bootply Profile</a>
-//                         <p>SKILLS</p>
-//                         <a href="">Web Designer</a><br/>
-//                         <a href="">Web Developer</a><br/>
-//                         <a href="">WordPress</a><br/>
-//                         <a href="">WooCommerce</a><br/>
-//                         <a href="">PHP, .Net</a><br/>
-//                     </div>
-//                 </div>
-//                 <div class="col-md-8">
-//                     <div class="tab-content profile-tab" id="myTabContent">
-//                         <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="home-tab">
-//                                     <div class="row">
-//                                         <div class="col-md-6">
-//                                             <label for="userId">User Id</label>
-//                                             <input onBlur={getUserId} type="text" placeholder="Enter your user ID" />
-//                                         </div>
-//                                     </div>
+    function GetInfo (usermail){
+    database.collection("User").get().then((querySnapshot) => {
+        querySnapshot.forEach(element => {
+            var data = element.data();
+            if (data.email == usermail){
+                setInfo(data);
+            }
+              
+        });
+                
 
-//                                     <div class="row">
-//                                         <div class="col-md-6"> 
-//                                             <label for="userName">User Name</label>
-//                                             <input onBlur={getUserName} type="text" placeholder="Enter your name" />       
-//                                         </div>
-//                                     </div>
+    })
+ 
+}   
+    return (
+         
+        <div class="container emp-profile">
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img src={info.avatar} alt=""/>
+                            <div class="file btn btn-lg btn-primary">
+                                Change Photo
+                                <input type="file" name="file"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                                    <h5>
+                                        {info.name}
+                                    </h5>
+                                    <h6>
+                                        User
+                                    </h6>
+                                    <p class="proile-rating">Plant progress : <span>100%</span></p>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item Acc">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                </li>
+                                <li class="nav-item Acc">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#tree" role="tab" aria-controls="trees" aria-selected="false">Planting</a>
+                                </li>
+                                <li class="nav-item Acc">
+                                    <a class="nav-link" id="library-tab" data-toggle="tab" href="#lib" role="tab" aria-controls="library" aria-selected="false">Library</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <Link to="/Profile" id="profile-edit-btn">Profile</Link>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-work">
+                            <p>WORK LINK</p>
+                            <a href="">Website Link</a><br/>
+                            <a href="">Bootsnipp Profile</a><br/>
+                            <a href="">Bootply Profile</a>
+                            <p>SKILLS</p>
+                            <a href="">Web Designer</a><br/>
+                            <a href="">Web Developer</a><br/>
+                            <a href="">WordPress</a><br/>
+                            <a href="">WooCommerce</a><br/>
+                            <a href="">PHP, .Net</a><br/>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="home-tab">
+                                      
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Name</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" id="name_input" name="name_input"/>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Age</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" id="age_input" name="age_input"/>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Email</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{info.email}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Phone</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" id="phone_input" name="phone_input"/>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Profession</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                            <input type="text" id="Profession_input" name="Profession_input"/>    
+                                            </div>
+                                        </div>
+                            </div>
+                            <div class="tab-pane fade show" id="tree" role="tabpanel" aria-labelledby="profile-tab">
+                                   <img src={tree} />
+                            </div>
+                            <div class="tab-pane fade show" id="libr" role="tabpanel" aria-labelledby="library-tab">
+                                   <p>aaaaaaa</p>
+                            </div>
+                    
+                        </div>
+                    </div>
+                </div>
+            </form>           
+        </div>
+    )
+}
 
-//                                     <div class="row">
-//                                         <div class="col-md-6"> 
-//                                             <label for="email">Email</label>
-//                                             <input onBlur={getEmail} type="text" placeholder="Enter your email" />       
-//                                         </div>
-//                                     </div>
-
-//                                     <div class="row">
-//                                         <div class="col-md-6">
-//                                             <label for="phoneNum">Phone</label>
-//                                             <input onBlur={getPhoneNum} type="text" placeholder="Enter your phone number" />
-//                                             </div>
-//                                     </div>
-
-//                                     <div class="row">
-//                                         <div class="col-md-6">
-//                                             <label for="professions">Profession</label>
-//                                             <input onBlur={getProfessions} type="text" placeholder="Enter your profession" />
-//                                         </div>
-//                                     </div>
-
-//                                     <div class="row-md-2">
-//                                         <button type="button" class="updateBtn" onClick={updateBtn}>Update Profile</button>   
-//                                     </div>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>           
-//     </div>
-//     );
-    
-// }
-
-// export default Edit
+export default Account
