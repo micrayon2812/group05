@@ -37,7 +37,7 @@ function Signup() {
         try {
             await signup(emailRef.current.value, passwordRef.current.value)
             createprofile(emailRef.current.value)
-            history.push("/Home")
+            history.push("/Login")
 
         } catch {
             setError('Failed to create an account')

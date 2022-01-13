@@ -8,7 +8,10 @@ import { useState } from "react";
 
 function ProfileEdit() {
   const [info, setInfo] = useState([]);
-
+  const[Name,setName]=useState("");
+  const[Age,setAge]=useState("");
+  const[Profess,setProfess]=useState("");
+  const[Phone,setPhone]=useState("");
   const user = auth.currentUser;
   GetInfo(user.email);
 
@@ -25,23 +28,29 @@ function ProfileEdit() {
         });
       });
   }
-  function UpdateInfo(usermail) {
+  const UpdateInfo = (e) => {
+
     database
       .collection("User")
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((element) => {
-          var data = element.data();
-          if (data.email == usermail) {
-            setInfo(data);
-          }
-        });
+      .doc(auth.currentUser.uid)
+      .update({
+        name: Name,
+        age: Age,
+        email: auth.currentUser.email,
+        phone:Phone,
+        profession:Profess,
+      })
+      .then((docRef) => {
+        alert("Update Info Successfully Published");
+      })
+      .catch((error) => {
+        console.error("Error Update Info: ", error);
       });
+    
   }
   return (
     <div class="container emp-profile">
-      <form method="post">
-        <div class="row">
+        <div class="row" >
           <div class="col-md-4">
             <div class="profile-img">
               <img src={info.avatar} alt="" />
@@ -51,7 +60,7 @@ function ProfileEdit() {
               </div>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6"   >
             <div class="profile-head">
               <h5>{info.name}</h5>
               <h6>User</h6>
@@ -126,7 +135,9 @@ function ProfileEdit() {
               <br />
             </div>
           </div>
-          <div class="col-md-8">
+          <form class="col-md-8" onSubmit={(e) => {
+          UpdateInfo(e);
+        }}>
             <div class="row">
               <div class="col-md-6">
                 <label className="lab">Name</label>
@@ -137,6 +148,9 @@ function ProfileEdit() {
                   id="name_input"
                   name="name_input"
                   className="inp"
+                  onChange={(e) => {
+                    setName(e.target.value);
+                  }}
                 />
               </div>
             </div>
@@ -150,6 +164,9 @@ function ProfileEdit() {
                   id="age_input"
                   name="age_input"
                   className="inp"
+                  onChange={(e) => {
+                    setAge(e.target.value);
+                  }}
                 />
               </div>
             </div>
@@ -171,6 +188,9 @@ function ProfileEdit() {
                   id="phone_input"
                   name="phone_input"
                   className="inp"
+                  onChange={(e) => {
+                    setPhone(e.target.value);
+                  }}
                 />
               </div>
             </div>
@@ -184,6 +204,9 @@ function ProfileEdit() {
                   id="Profession_input"
                   name="Profession_input"
                   className="inp"
+                  onChange={(e) => {
+                    setProfess(e.target.value);
+                  }}
                 />
               </div>
             </div>
@@ -197,9 +220,8 @@ function ProfileEdit() {
                 </div>
               </div>
             </div>
-          </div>
+          </form>
         </div>
-      </form>
     </div>
   );
 }

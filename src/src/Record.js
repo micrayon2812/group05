@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { database, storage } from "./Database/Firebase";
+
 function Record() {
   const [name, SetName] = useState("");
   const [author, SetAuthor] = useState("");
@@ -9,9 +10,7 @@ function Record() {
   const [buy, SetBuy] = useState("");
   const [category, SetCategory] = useState("");
   const [cover, setCover] = useState("");
-  const getId = (e) => {
-   console.log(e.currentTarget.id);
- }
+
   const sub = (e) => {
     e.preventDefault();
 
@@ -21,390 +20,408 @@ function Record() {
       .child(cover.name)
       .getDownloadURL()
       .then((URL) => {
-        switch (category) {
-          case "1":
-            database
-              .collection("Arts&Music")
-              .add({
-                Name: name,
-                Author: author,
-                Des: des,
-                Ebook: ebook,
-                Buy: buy,
-                Cover: URL,
-              })
-              .then((docRef) => {
-                alert("Book Successfully Published");
-              })
-              .catch((error) => {
-                console.error("Error Published Book: ", error);
-              });
-            break;
-          case "2":
-            database
-              .collection("Biographies")
-              .add({
-                Name: name,
-                Author: author,
-                Des: des,
-                Ebook: ebook,
-                Buy: buy,
-                Cover: URL,
-              })
-              .then((docRef) => {
-                alert("Book Successfully Published");
-              })
-              .catch((error) => {
-                console.error("Error Published Book: ", error);
-              });
-            break;
-          case "3":
-            database
-              .collection("Comics")
-              .add({
-                Name: name,
-                Author: author,
-                Des: des,
-                Ebook: ebook,
-                Buy: buy,
-                Cover: URL,
-              })
-              .then((docRef) => {
-                alert("Book Successfully Published");
-              })
-              .catch((error) => {
-                console.error("Error Published Book: ", error);
-              });
-            break;
-          case "4":
-            database
-              .collection("Computers&Tech")
-              .add({
-                Name: name,
-                Author: author,
-                Des: des,
-                Ebook: ebook,
-                Buy: buy,
-                Cover: URL,
-              })
-              .then((docRef) => {
-                alert("Book Successfully Published");
-              })
-              .catch((error) => {
-                console.error("Error Published Book: ", error);
-              });
-            break;
-          case "5":
-            database
-              .collection("Cooking")
-              .add({
-                Name: name,
-                Author: author,
-                Des: des,
-                Ebook: ebook,
-                Buy: buy,
-                Cover: URL,
-              })
-              .then((docRef) => {
-                alert("Book Successfully Published");
-              })
-              .catch((error) => {
-                console.error("Error Published Book: ", error);
-              });
-            break;
-          case "6":
-            database
-              .collection("Edu&Reference")
-              .add({
-                Name: name,
-                Author: author,
-                Des: des,
-                Ebook: ebook,
-                Buy: buy,
-                Cover: URL,
-              })
-              .then((docRef) => {
-                alert("Book Successfully Published");
-              })
-              .catch((error) => {
-                console.error("Error Published Book: ", error);
-              });
-            break;
-          case "7":
-            database
-              .collection("Entertainment")
-              .add({
-                Name: name,
-                Author: author,
-                Des: des,
-                Ebook: ebook,
-                Buy: buy,
-                Cover: URL,
-              })
-              .then((docRef) => {
-                alert("Book Successfully Published");
-              })
-              .catch((error) => {
-                console.error("Error Published Book: ", error);
-              });
-            break;
-          case "8":
-            database
-              .collection("Gay&Lesbian")
-              .add({
-                Name: name,
-                Author: author,
-                Des: des,
-                Ebook: ebook,
-                Buy: buy,
-                Cover: URL,
-              })
-              .then((docRef) => {
-                alert("Book Successfully Published");
-              })
-              .catch((error) => {
-                console.error("Error Published Book: ", error);
-              });
-            break;
-          case "9":
-            database
-              .collection("Health&Fitness")
-              .add({
-                Name: name,
-                Author: author,
-                Des: des,
-                Ebook: ebook,
-                Buy: buy,
-                Cover: URL,
-              })
-              .then((docRef) => {
-                alert("Book Successfully Published");
-              })
-              .catch((error) => {
-                console.error("Error Published Book: ", error);
-              });
-            break;
-          case "10":
-            database
-              .collection("Horror")
-              .add({
-                Name: name,
-                Author: author,
-                Des: des,
-                Ebook: ebook,
-                Buy: buy,
-                Cover: URL,
-              })
-              .then((docRef) => {
-                alert("Book Successfully Published");
-              })
-              .catch((error) => {
-                console.error("Error Published Book: ", error);
-              });
-            break;
-          case "11":
-            database
-              .collection("Kids")
-              .add({
-                Name: name,
-                Author: author,
-                Des: des,
-                Ebook: ebook,
-                Buy: buy,
-                Cover: URL,
-              })
-              .then((docRef) => {
-                alert("Book Successfully Published");
-              })
-              .catch((error) => {
-                console.error("Error Published Book: ", error);
-              });
-            break;
-          case "12":
-            database
-              .collection("Literature&Fiction")
-              .add({
-                Name: name,
-                Author: author,
-                Des: des,
-                Ebook: ebook,
-                Buy: buy,
-                Cover: URL,
-              })
-              .then((docRef) => {
-                alert("Book Successfully Published");
-              })
-              .catch((error) => {
-                console.error("Error Published Book: ", error);
-              });
-            break;
-          case "13":
-            database
-              .collection("Mysteries")
-              .add({
-                Name: name,
-                Author: author,
-                Des: des,
-                Ebook: ebook,
-                Buy: buy,
-                Cover: URL,
-              })
-              .then((docRef) => {
-                alert("Book Successfully Published");
-              })
-              .catch((error) => {
-                console.error("Error Published Book: ", error);
-              });
-            break;
+        // switch (category) {
+        //   case "1":
+        //     database
+        //       .collection("Arts&Music")
+        //       .add({
+        //         Name: name,
+        //         Author: author,
+        //         Des: des,
+        //         Ebook: ebook,
+        //         Buy: buy,
+        //         Cover: URL,
+        //       })
+        //       .then((docRef) => {
+        //         alert("Book Successfully Published");
+        //       })
+        //       .catch((error) => {
+        //         console.error("Error Published Book: ", error);
+        //       });
+        //     break;
+        //   case "2":
+        //     database
+        //       .collection("Biographies")
+        //       .add({
+        //         Name: name,
+        //         Author: author,
+        //         Des: des,
+        //         Ebook: ebook,
+        //         Buy: buy,
+        //         Cover: URL,
+        //       })
+        //       .then((docRef) => {
+        //         alert("Book Successfully Published");
+        //       })
+        //       .catch((error) => {
+        //         console.error("Error Published Book: ", error);
+        //       });
+        //     break;
+        //   case "3":
+        //     database
+        //       .collection("Comics")
+        //       .add({
+        //         Name: name,
+        //         Author: author,
+        //         Des: des,
+        //         Ebook: ebook,
+        //         Buy: buy,
+        //         Cover: URL,
+        //       })
+        //       .then((docRef) => {
+        //         alert("Book Successfully Published");
+        //       })
+        //       .catch((error) => {
+        //         console.error("Error Published Book: ", error);
+        //       });
+        //     break;
+        //   case "4":
+        //     database
+        //       .collection("Computers&Tech")
+        //       .add({
+        //         Name: name,
+        //         Author: author,
+        //         Des: des,
+        //         Ebook: ebook,
+        //         Buy: buy,
+        //         Cover: URL,
+        //       })
+        //       .then((docRef) => {
+        //         alert("Book Successfully Published");
+        //       })
+        //       .catch((error) => {
+        //         console.error("Error Published Book: ", error);
+        //       });
+        //     break;
+        //   case "5":
+        //     database
+        //       .collection("Cooking")
+        //       .add({
+        //         Name: name,
+        //         Author: author,
+        //         Des: des,
+        //         Ebook: ebook,
+        //         Buy: buy,
+        //         Cover: URL,
+        //       })
+        //       .then((docRef) => {
+        //         alert("Book Successfully Published");
+        //       })
+        //       .catch((error) => {
+        //         console.error("Error Published Book: ", error);
+        //       });
+        //     break;
+        //   case "6":
+        //     database
+        //       .collection("Edu&Reference")
+        //       .add({
+        //         Name: name,
+        //         Author: author,
+        //         Des: des,
+        //         Ebook: ebook,
+        //         Buy: buy,
+        //         Cover: URL,
+        //       })
+        //       .then((docRef) => {
+        //         alert("Book Successfully Published");
+        //       })
+        //       .catch((error) => {
+        //         console.error("Error Published Book: ", error);
+        //       });
+        //     break;
+        //   case "7":
+        //     database
+        //       .collection("Entertainment")
+        //       .add({
+        //         Name: name,
+        //         Author: author,
+        //         Des: des,
+        //         Ebook: ebook,
+        //         Buy: buy,
+        //         Cover: URL,
+        //       })
+        //       .then((docRef) => {
+        //         alert("Book Successfully Published");
+        //       })
+        //       .catch((error) => {
+        //         console.error("Error Published Book: ", error);
+        //       });
+        //     break;
+        //   case "8":
+        //     database
+        //       .collection("Gay&Lesbian")
+        //       .add({
+        //         Name: name,
+        //         Author: author,
+        //         Des: des,
+        //         Ebook: ebook,
+        //         Buy: buy,
+        //         Cover: URL,
+        //       })
+        //       .then((docRef) => {
+        //         alert("Book Successfully Published");
+        //       })
+        //       .catch((error) => {
+        //         console.error("Error Published Book: ", error);
+        //       });
+        //     break;
+        //   case "9":
+        //     database
+        //       .collection("Health&Fitness")
+        //       .add({
+        //         Name: name,
+        //         Author: author,
+        //         Des: des,
+        //         Ebook: ebook,
+        //         Buy: buy,
+        //         Cover: URL,
+        //       })
+        //       .then((docRef) => {
+        //         alert("Book Successfully Published");
+        //       })
+        //       .catch((error) => {
+        //         console.error("Error Published Book: ", error);
+        //       });
+        //     break;
+        //   case "10":
+        //     database
+        //       .collection("Horror")
+        //       .add({
+        //         Name: name,
+        //         Author: author,
+        //         Des: des,
+        //         Ebook: ebook,
+        //         Buy: buy,
+        //         Cover: URL,
+        //       })
+        //       .then((docRef) => {
+        //         alert("Book Successfully Published");
+        //       })
+        //       .catch((error) => {
+        //         console.error("Error Published Book: ", error);
+        //       });
+        //     break;
+        //   case "11":
+        //     database
+        //       .collection("Kids")
+        //       .add({
+        //         Name: name,
+        //         Author: author,
+        //         Des: des,
+        //         Ebook: ebook,
+        //         Buy: buy,
+        //         Cover: URL,
+        //       })
+        //       .then((docRef) => {
+        //         alert("Book Successfully Published");
+        //       })
+        //       .catch((error) => {
+        //         console.error("Error Published Book: ", error);
+        //       });
+        //     break;
+        //   case "12":
+        //     database
+        //       .collection("Literature&Fiction")
+        //       .add({
+        //         Name: name,
+        //         Author: author,
+        //         Des: des,
+        //         Ebook: ebook,
+        //         Buy: buy,
+        //         Cover: URL,
+        //       })
+        //       .then((docRef) => {
+        //         alert("Book Successfully Published");
+        //       })
+        //       .catch((error) => {
+        //         console.error("Error Published Book: ", error);
+        //       });
+        //     break;
+        //   case "13":
+        //     database
+        //       .collection("Mysteries")
+        //       .add({
+        //         Name: name,
+        //         Author: author,
+        //         Des: des,
+        //         Ebook: ebook,
+        //         Buy: buy,
+        //         Cover: URL,
+        //       })
+        //       .then((docRef) => {
+        //         alert("Book Successfully Published");
+        //       })
+        //       .catch((error) => {
+        //         console.error("Error Published Book: ", error);
+        //       });
+        //     break;
          
-          case "14":
-            database
-              .collection("Religion")
-              .add({
-                Name: name,
-                Author: author,
-                Des: des,
-                Ebook: ebook,
-                Buy: buy,
-                Cover: URL,
-              })
-              .then((docRef) => {
-                alert("Book Successfully Published");
-              })
-              .catch((error) => {
-                console.error("Error Published Book: ", error);
-              });
-            break;
-          case "15":
-            database
-              .collection("Romance")
-              .add({
-                Name: name,
-                Author: author,
-                Des: des,
-                Ebook: ebook,
-                Buy: buy,
-                Cover: URL,
-              })
-              .then((docRef) => {
-                alert("Book Successfully Published");
-              })
-              .catch((error) => {
-                console.error("Error Published Book: ", error);
-              });
-            break;
-          case "16":
-            database
-              .collection("Sci-Fi&Fantasy")
-              .add({
-                Name: name,
-                Author: author,
-                Des: des,
-                Ebook: ebook,
-                Buy: buy,
-                Cover: URL,
-              })
-              .then((docRef) => {
-                alert("Book Successfully Published");
-              })
-              .catch((error) => {
-                console.error("Error Published Book: ", error);
-              });
-            break;
-          case "17":
-            database
-              .collection("Science&Math")
-              .add({
-                Name: name,
-                Author: author,
-                Des: des,
-                Ebook: ebook,
-                Buy: buy,
-                Cover: URL,
-              })
-              .then((docRef) => {
-                alert("Book Successfully Published");
-              })
-              .catch((error) => {
-                console.error("Error Published Book: ", error);
-              });
-            break;
-          case "18":
-            database
-              .collection("Sports")
-              .add({
-                Name: name,
-                Author: author,
-                Des: des,
-                Ebook: ebook,
-                Buy: buy,
-                Cover: URL,
-              })
-              .then((docRef) => {
-                alert("Book Successfully Published");
-              })
-              .catch((error) => {
-                console.error("Error Published Book: ", error);
-              });
-            break;
-          case "19":
-            database
-              .collection("Teenfic")
-              .add({
-                Name: name,
-                Author: author,
-                Des: des,
-                Ebook: ebook,
-                Buy: buy,
-                Cover: URL,
-              })
-              .then((docRef) => {
-                alert("Book Successfully Published");
-              })
-              .catch((error) => {
-                console.error("Error Published Book: ", error);
-              });
-            break;
+        //   case "14":
+        //     database
+        //       .collection("Religion")
+        //       .add({
+        //         Name: name,
+        //         Author: author,
+        //         Des: des,
+        //         Ebook: ebook,
+        //         Buy: buy,
+        //         Cover: URL,
+        //       })
+        //       .then((docRef) => {
+        //         alert("Book Successfully Published");
+        //       })
+        //       .catch((error) => {
+        //         console.error("Error Published Book: ", error);
+        //       });
+        //     break;
+        //   case "15":
+        //     database
+        //       .collection("Romance")
+        //       .add({
+        //         Name: name,
+        //         Author: author,
+        //         Des: des,
+        //         Ebook: ebook,
+        //         Buy: buy,
+        //         Cover: URL,
+        //       })
+        //       .then((docRef) => {
+        //         alert("Book Successfully Published");
+        //       })
+        //       .catch((error) => {
+        //         console.error("Error Published Book: ", error);
+        //       });
+        //     break;
+        //   case "16":
+        //     database
+        //       .collection("Sci-Fi&Fantasy")
+        //       .add({
+        //         Name: name,
+        //         Author: author,
+        //         Des: des,
+        //         Ebook: ebook,
+        //         Buy: buy,
+        //         Cover: URL,
+        //       })
+        //       .then((docRef) => {
+        //         alert("Book Successfully Published");
+        //       })
+        //       .catch((error) => {
+        //         console.error("Error Published Book: ", error);
+        //       });
+        //     break;
+        //   case "17":
+        //     database
+        //       .collection("Science&Math")
+        //       .add({
+        //         Name: name,
+        //         Author: author,
+        //         Des: des,
+        //         Ebook: ebook,
+        //         Buy: buy,
+        //         Cover: URL,
+        //       })
+        //       .then((docRef) => {
+        //         alert("Book Successfully Published");
+        //       })
+        //       .catch((error) => {
+        //         console.error("Error Published Book: ", error);
+        //       });
+        //     break;
+        //   case "18":
+        //     database
+        //       .collection("Sports")
+        //       .add({
+        //         Name: name,
+        //         Author: author,
+        //         Des: des,
+        //         Ebook: ebook,
+        //         Buy: buy,
+        //         Cover: URL,
+        //       })
+        //       .then((docRef) => {
+        //         alert("Book Successfully Published");
+        //       })
+        //       .catch((error) => {
+        //         console.error("Error Published Book: ", error);
+        //       });
+        //     break;
+        //   case "19":
+        //     database
+        //       .collection("Teenfic")
+        //       .add({
+        //         Name: name,
+        //         Author: author,
+        //         Des: des,
+        //         Ebook: ebook,
+        //         Buy: buy,
+        //         Cover: URL,
+        //       })
+        //       .then((docRef) => {
+        //         alert("Book Successfully Published");
+        //       })
+        //       .catch((error) => {
+        //         console.error("Error Published Book: ", error);
+        //       });
+        //     break;
           
-          case "20":
-            database
-              .collection("TrueCrime")
-              .add({
-                Name: name,
-                Author: author,
-                Des: des,
-                Ebook: ebook,
-                Buy: buy,
-                Cover: URL,
-              })
-              .then((docRef) => {
-                alert("Book Successfully Published");
-              })
-              .catch((error) => {
-                console.error("Error Published Book: ", error);
-              });
-            break;
-          case "21":
-            database
-              .collection("Others")
-              .add({
-                Name: name,
-                Author: author,
-                Des: des,
-                Ebook: ebook,
-                Buy: buy,
-                Cover: URL,
-              })
-              .then((docRef) => {
-                alert("Book Successfully Published");
-              })
-              .catch((error) => {
-                console.error("Error Published Book: ", error);
-              });
-            break;
-            default:
-               database
-               .collection("Others")
+        //   case "20":
+        //     database
+        //       .collection("TrueCrime")
+        //       .add({
+        //         Name: name,
+        //         Author: author,
+        //         Des: des,
+        //         Ebook: ebook,
+        //         Buy: buy,
+        //         Cover: URL,
+        //       })
+        //       .then((docRef) => {
+        //         alert("Book Successfully Published");
+        //       })
+        //       .catch((error) => {
+        //         console.error("Error Published Book: ", error);
+        //       });
+        //     break;
+        //   case "21":
+        //     database
+        //       .collection("Others")
+        //       .add({
+        //         Name: name,
+        //         Author: author,
+        //         Des: des,
+        //         Ebook: ebook,
+        //         Buy: buy,
+        //         Cover: URL,
+        //       })
+        //       .then((docRef) => {
+        //         alert("Book Successfully Published");
+        //       })
+        //       .catch((error) => {
+        //         console.error("Error Published Book: ", error);
+        //       });
+        //     break;
+        //     default:
+        //        database
+        //        .collection("Others")
+        //        .add({
+        //          Name: name,
+        //          Author: author,
+        //          Des: des,
+        //          Ebook: ebook,
+        //          Buy: buy,
+        //          Cover: URL,
+        //          Category: category
+        //        })
+        //        .then((docRef) => {
+        //          alert("Book Successfully Published");
+        //        })
+        //        .catch((error) => {
+        //          console.error("Error Published Book: ", error);
+        //        });
+        //}
+                 database
+               .collection("Books")
                .add({
                  Name: name,
                  Author: author,
@@ -420,7 +437,6 @@ function Record() {
                .catch((error) => {
                  console.error("Error Published Book: ", error);
                });
-        }
       });
   };
   return (
@@ -508,28 +524,28 @@ function Record() {
             SetCategory(e.target.value);
           }}
         >
-          <option selected value="0">Category</option>
-          <option value="1" > Arts &amp; Music</option>
-          <option value="2">Biographies</option>
-          <option value="3">Comics</option>
-          <option value="4">Computers &amp; Tech</option>
-          <option value="5">Cooking</option>
-          <option value="6">Edu &amp; Reference</option>
-          <option value="7">Entertainment</option>
-          <option value="8">Gay &amp; Lesbian</option>
-          <option value="9">Health &amp; Fitness</option>
-          <option value="10">Horror</option>
-          <option value="11">Kids</option>
-          <option value="12">Literature &amp; Fiction</option>
-          <option value="13">Mysteries</option>
-          <option value="14">Religion</option>
-          <option value="15">Romance</option>
-          <option value="16">Sci-Fi &amp; Fantasy</option>
-          <option value="17">Science &amp; Math</option>
-          <option value="18">Sports</option>
-          <option value="19">Teenfic</option>
-          <option value="20">True Crime</option>
-          <option value="21">Others</option>
+          <option selected value="Others">Category</option>
+          <option value="Arts Music" > Arts &amp; Music</option>
+          <option value="Biographies">Biographies</option>
+          <option value="Comics">Comics</option>
+          <option value="Computers">Computers &amp; Tech</option>
+          <option value="Cooking">Cooking</option>
+          <option value="Edu Reference">Edu &amp; Reference</option>
+          <option value="Entertainment">Entertainment</option>
+          <option value="GayLesbian">Gay &amp; Lesbian</option>
+          <option value="Health Fitness">Health &amp; Fitness</option>
+          <option value="Horror">Horror</option>
+          <option value="Kids">Kids</option>
+          <option value="Literature Fiction">Literature &amp; Fiction</option>
+          <option value="Mysteries">Mysteries</option>
+          <option value="Religion">Religion</option>
+          <option value="Romance">Romance</option>
+          <option value="Sci-Fi Fantasy">Sci-Fi &amp; Fantasy</option>
+          <option value="Science Math">Science &amp; Math</option>
+          <option value="Sports">Sports</option>
+          <option value="Teenfic">Teenfic</option>
+          <option value="True Crime">True Crime</option>
+          <option value="Others">Others</option>
         </select>
 
         <div class="form-field col-lg-6 ">
