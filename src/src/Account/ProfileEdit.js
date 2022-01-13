@@ -60,13 +60,13 @@ function ProfileEdit() {
                                     <p class="proile-rating">Plant Level : <span>100%</span></p>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item Acc">
-                                    <a class="nav-link active" id="home-tab" href="/Profile-About" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                    <a class="nav-link active" id="home-tab" href="/ProfileAbout" role="tab" aria-controls="home" aria-selected="true">About</a>
                                 </li>
                                 <li class="nav-item Acc">
-                                    <a class="nav-link" id="profile-tab"  href="/Profile-Planting" role="tab" aria-controls="trees" aria-selected="false">Planting</a>
+                                    <a class="nav-link" id="profile-tab"  href="/ProfilePlanting" role="tab" aria-controls="trees" aria-selected="false">Planting</a>
                                 </li>
                                 <li class="nav-item Acc">
-                                    <a class="nav-link" id="library-tab" href="/Profile-Library" role="tab" aria-controls="library" aria-selected="false">Library</a>
+                                    <a class="nav-link" id="library-tab" href="/ProfileLibrary" role="tab" aria-controls="library" aria-selected="false">Library</a>
                                 </li>
                             </ul>
                         </div>
@@ -94,49 +94,61 @@ function ProfileEdit() {
            
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Name</label>
+                                                <label className='lab'>Name</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <input type="text" id="name_input" name="name_input"/>
+                                                <input type="text" id="name_input" name="name_input"className='inp'/>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Age</label>
+                                                <label className='lab'>Age</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <input type="text" id="age_input" name="age_input"/>
+                                                <input type="text" id="age_input" name="age_input"className='inp'/>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Email</label>
+                                                <label className='lab'>Email</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{info.email}</p>
+                                                <p className='inp1'>{info.email}</p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Phone</label>
+                                                <label className='lab'>Phone</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <input type="text" id="phone_input" name="phone_input"/>
+                                                <input type="text" id="phone_input" name="phone_input" className='inp'/>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Profession</label>
+                                                <label className='lab'>Profession</label>
                                             </div>
                                             <div class="col-md-6">
-                                            <input type="text" id="Profession_input" name="Profession_input"/>    
+                                            <input type="text" id="Profession_input" name="Profession_input"className='inp'/>    
                                             </div>
                                         </div>
+                                        <div>
+                                        <div class="row rowpad" >
+                                        <div class="col-md-6">
+                                            </div>
+                                            <div class="col-md-6">
+                                            <div class="form-field ">
+          <input class="submit-btn" type="submit" value="Submit" />
+        </div>  
+                                            </div>
+                                            </div>
+                                        </div>
+                                     
                             </div>
-                   
+                            
                     
                         </div>
-    
+                        
             </form>           
         </div>
     )

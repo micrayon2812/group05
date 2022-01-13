@@ -81,42 +81,42 @@ function ProfileAbout() {
                     <div class="col-md-8">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Name</label>
+                                                <label className='lab'>Name</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{info.name}</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Age</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>{info.age}</p>
+                                                <p className='inp1'>{info.name}</p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Email</label>
+                                                <label className='lab'>Age</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{info.email}</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Phone</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>{info.phone}</p>
+                                                <p className='inp1'>{info.age}</p>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Profession</label>
+                                                <label className='lab'>Email</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{info.profession}</p>
+                                                <p className='inp1'>{info.email}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label  className='lab'>Phone</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p className='inp1'>{info.phone}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label className='lab'>Profession</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p className='inp1'>{info.profession}</p>
                                             </div>
                                         </div>
                             </div>
