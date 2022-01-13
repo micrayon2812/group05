@@ -1,14 +1,12 @@
 import React from 'react'
 import "./Profile.css";
-import ava from "./img/profile-0-Enhanced-Animated.gif"
-import tree from "./img/tree.gif"
-import {Route, Link} from "react-router-dom";
-import Edit from "./EditProfile";
-import { auth } from './firebase';
-import {database} from "./Database/Firebase"
+
+import {Link} from "react-router-dom";
+import { auth } from '../firebase';
+import {database} from "../Database/Firebase"
 import { useState } from 'react';
 
-function Account() {
+function ProfileEdit() {
     const [info , setInfo] = useState([]);
 
     const user = auth.currentUser;
@@ -22,12 +20,21 @@ function Account() {
                 setInfo(data);
             }
               
-        });
-                
-
+        });  
     })
+}
+    function UpdateInfo (usermail){
+        database.collection("User").get().then((querySnapshot) => {
+            querySnapshot.forEach(element => {
+                var data = element.data();
+                if (data.email == usermail){
+                    setInfo(data);
+                }
+                  
+            });  
+        })
  
-}   
+    }
     return (
          
         <div class="container emp-profile">
@@ -50,22 +57,22 @@ function Account() {
                                     <h6>
                                         User
                                     </h6>
-                                    <p class="proile-rating">Plant progress : <span>100%</span></p>
+                                    <p class="proile-rating">Plant Level : <span>100%</span></p>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item Acc">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                    <a class="nav-link active" id="home-tab" href="/Profile-About" role="tab" aria-controls="home" aria-selected="true">About</a>
                                 </li>
                                 <li class="nav-item Acc">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#tree" role="tab" aria-controls="trees" aria-selected="false">Planting</a>
+                                    <a class="nav-link" id="profile-tab"  href="/Profile-Planting" role="tab" aria-controls="trees" aria-selected="false">Planting</a>
                                 </li>
                                 <li class="nav-item Acc">
-                                    <a class="nav-link" id="library-tab" data-toggle="tab" href="#lib" role="tab" aria-controls="library" aria-selected="false">Library</a>
+                                    <a class="nav-link" id="library-tab" href="/Profile-Library" role="tab" aria-controls="library" aria-selected="false">Library</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <Link to="/Profile" id="profile-edit-btn">Profile</Link>
+                        <Link to="/ProfileAbout" id="profile-edit-btn">Profile</Link>
                     </div>
                 </div>
                 <div class="row">
@@ -84,9 +91,7 @@ function Account() {
                         </div>
                     </div>
                     <div class="col-md-8">
-                        <div class="tab-content profile-tab" id="myTabContent">
-                            <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="home-tab">
-                                      
+           
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label>Name</label>
@@ -128,19 +133,13 @@ function Account() {
                                             </div>
                                         </div>
                             </div>
-                            <div class="tab-pane fade show" id="tree" role="tabpanel" aria-labelledby="profile-tab">
-                                   <img src={tree} />
-                            </div>
-                            <div class="tab-pane fade show" id="libr" role="tabpanel" aria-labelledby="library-tab">
-                                   <p>aaaaaaa</p>
-                            </div>
+                   
                     
                         </div>
-                    </div>
-                </div>
+    
             </form>           
         </div>
     )
 }
 
-export default Account
+export default ProfileEdit

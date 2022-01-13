@@ -20,47 +20,7 @@ function Navbar() {
                     </li>
                     <li class="nav-item"> 
                       <a class="nav-link " href="/Aboutus" >About Us</a>
-                    {/* <a class="nav-link " href="/Aboutus" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us<span class="fa fa-angle-down"></span></a> */}
-                        {/* <div class="dropdown-menu" id="dropdown-menu2" aria-labelledby="navbarDropdown2">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="row d-flex tab">
-                                            <div class="fa-icon text-center"> <span class="fa fa-folder"></span> </div>
-                                            <div class="d-flex flex-column"> <a class="dropdown-item" href="#">
-                                                    <h6 class="mb-0">WhitePaper</h6> <small class="text-light">Marketing and report</small>
-                                                </a> </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row d-flex tab">
-                                            <div class="fa-icon text-center"> <span class="fa fa-question"></span> </div>
-                                            <div class="d-flex flex-column"> <a class="dropdown-item" href="#">
-                                                    <h6 class="mb-0">FAQs</h6> <small class="text-light">Qs and answers</small>
-                                                </a> </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="row d-flex tab">
-                                            <div class="fa-icon text-center"> <span class="fa fa-calculator"></span> </div>
-                                            <div class="d-flex flex-column"> <a class="dropdown-item" href="#">
-                                                    <h6 class="mb-0">Tools</h6> <small class="text-light">All tools</small>
-                                                </a> </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="row d-flex tab">
-                                            <div class="fa-icon text-center"> <span class="fa fa-paper-plane"></span> </div>
-                                            <div class="d-flex flex-column"> <a class="dropdown-item" href="#">
-                                                    <h6 class="mb-0">Success Stories</h6> <small class="text-light">Experiences</small>
-                                                </a> </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> */}
+                   
                     </li>
                     <li class="nav-item"> <a class="nav-link" href="/Category" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category<span class="fa fa-angle-down"></span></a>
                         <div class="dropdown-menu" id="dropdown-menu1" aria-labelledby="navbarDropdown1">
@@ -252,31 +212,7 @@ function Navbar() {
                             </div>
                         </div>
                     </li>
-                    {/* <li class="nav-item"> <a class="nav-link" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community<span class="fa fa-angle-down"></span></a>
-                        <div class="dropdown-menu" id="dropdown-menu3" aria-labelledby="navbarDropdown3">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="row d-flex tab">
-                                            <div class="fa-icon text-center"> <span class="fa fa-feed"></span> </div>
-                                            <div class="d-flex flex-column"> <a class="dropdown-item" href="#">
-                                                    <h6 class="mb-0">Feedback</h6> <small class="text-light">Opinions, complaints</small>
-                                                </a> </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 ">
-                                        <div class="row d-flex tab">
-                                            <div class="fa-icon text-center"> <span class="fa fa-question"></span> </div>
-                                            <div class="d-flex flex-column"> <a class="dropdown-item" href="#">
-                                                    <h6 class="mb-0">FAQs</h6> <small class="text-light">Qs and answers</small>
-                                                </a> </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li> */}
-
+              
                     
                     <li class="nav-item"> 
                       <a class="nav-link " href="/Record" >Publish</a>
@@ -291,7 +227,7 @@ function Navbar() {
                                     <IconContext.Provider value={{ color: "Black"}}>  <a class=" mx-1 acc"  href="/Account"  ><VscAccount  value={{ color: "blue" }} size="30px" /></a></IconContext.Provider>  
                            </button>
                    <div class="dropdown-menu" aria-labelledby="triggerId">
-                       <a class="dropdown-item" href="/Profile">Profile</a>
+                       <a class="dropdown-item" href="/ProfileAbout">Profile</a>
                        <div class="dropdown-divider"></div>
                        <a class="dropdown-item" href="/MyBook">My book</a>
                        <div class="dropdown-divider"></div>
