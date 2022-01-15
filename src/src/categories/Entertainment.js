@@ -9,7 +9,7 @@ const Entertainment = () => {
         <div className="img-grid">
             {docs && docs.map(doc => (
                 <div className="img-wrap" key={doc.id}>
-                    <img src={doc.url} alt="uploaded pic" />
+                    <a href="#"><img src={doc.Cover} alt="uploaded pic" /></a>
                 </div>
             ))}
         </div>

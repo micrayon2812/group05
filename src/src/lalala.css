@@ -1,0 +1,130 @@
+.body{
+    display: flex;
+    flex-direction: column;
+    width: 1222px;
+    margin: 0 auto;
+}
+
+.flex-1-row{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.flex-2-row{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.title{
+    /* position: absolute; */
+width: 506px;
+height: 88px;
+
+font-family: Frank Ruhl Libre;
+font-style: normal;
+font-weight: bold;
+font-size: 43px;
+line-height: 56px;
+}
+
+.author{
+    /* position: absolute; */
+width: 506px;
+height: 88px;
+
+font-family: Frank Ruhl Libre;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 31px;
+}
+
+.genre{
+    /* position: absolute; */
+width: 291px;
+height: 26px;
+
+font-family: Frank Ruhl Libre;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 26px;
+/* identical to box height */
+}
+
+.summary{
+    /* position: absolute; */
+width: 1015px;
+height: 182px;
+
+font-family: Frank Ruhl Libre;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 26px;
+}
+
+.wherebuy{
+    /* position: absolute; */
+width: 162px;
+height: 22px;
+
+font-family: Arial;
+font-style: normal;
+font-weight: bold;
+font-size: 19px;
+line-height: 22px;
+}
+
+.Cover{
+    /* position: absolute; */
+width: 175px;
+height: 245px;
+}
+
+.topreiview{
+    /* position: absolute; */
+width: 160px;
+height: 22px;
+
+font-family: Arial;
+font-style: normal;
+font-weight: bold;
+font-size: 19px;
+line-height: 22px;
+}
+
+.row{
+    flex-grow:1;
+}
+
+.avatar{
+    width: 73px;
+    height: 69px;
+}
+
+.namerate{
+    width: 163px;
+height: 20px;
+    font-family: Arial;
+font-style: normal;
+font-weight: bold;
+font-size: 17px;
+line-height: 20px;
+/* identical to box height */
+
+display: flex;
+align-items: center;
+}
+
+.comment{
+    width: 1111px;
+    height: 78px;
+    font-family: Frank Ruhl Libre;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 26px;
+}

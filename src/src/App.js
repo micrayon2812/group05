@@ -33,6 +33,8 @@ import Sports from "./categories/Sports";
 import Teenfic from "./categories/Teenfic";
 import TrueCrime from "./categories/TrueCrime";
 
+import Lalala from "./lalala"
+
 
 
 function App() {
@@ -80,8 +82,10 @@ function App() {
       <Route exact path="/CategorySports" component={Sports} />
       <Route exact path="/CategoryTeenfic" component={Teenfic} />
       <Route exact path="/CategoryTrueCrime" component={TrueCrime} />
+      <Route exact path="/lalala" component={Lalala} />
 
-    </div>
+
+    </div >
   );
 }
 
