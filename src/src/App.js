@@ -1,9 +1,9 @@
 import './App.css';
-import {Route, Link} from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 import Login from "./Login";
 import Home from "./Home";
 import Category from "./Category";
-import Navbar  from './Navbar';
+import Navbar from './Navbar';
 import Aboutus from './Aboutus';
 import Navbar2 from "./Navbar2";
 import Record from "./Record";
@@ -13,24 +13,25 @@ import Signup from "./Signup";
 import { AuthProvider } from './contexts/AuthContext';
 import ProfileAbout from './Account/ProfileAbout';
 import ProfileEdit from './Account/ProfileEdit';
+import ArtsMusic from "./category/ArtsMusic";
 
 function App() {
   const path = window.location.pathname;
 
-  return ( 
+  return (
     <div>
       <AuthProvider>
         <Route exact path="/" exact component={Login} />
         {path !== '/' && path !== '/Signup' && path !== '/Login' &&
-            <div>
-              <Navbar />
-            </div>
-          }
-          {path !== '/' && path !== '/Signup' && path !== '/Login' && path !=='/Home' &&  path !=='/Account' &&
-            <div>
-              <Navbar2 />
-            </div>
-          }
+          <div>
+            <Navbar />
+          </div>
+        }
+        {path !== '/' && path !== '/Signup' && path !== '/Login' && path !== '/Home' && path !== '/Account' &&
+          <div>
+            <Navbar2 />
+          </div>
+        }
         <Route exact path="/Home" component={Home} />
         <Route exact path="/Signup" component={Signup} />
         <Route exact path="/Login" component={Login} />
@@ -41,9 +42,10 @@ function App() {
         <Route exact path="/MyBook" component={Mybook} />
         <Route exact path="/ProfileAbout" component={ProfileAbout} />
         <Route exact path="/ProfileEdit" component={ProfileEdit} />
+        <Route exact path="/ArtsMusic" component={ArtsMusic} />
       </AuthProvider>
     </div>
-    
+
   );
 }
 
