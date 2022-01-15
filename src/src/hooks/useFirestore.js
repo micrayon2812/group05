@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import { projectFirestore } from "../Dataset/Firebase";
+import { database } from "../Database/Firebase";
 import { categoryNames } from "../constants/categories";
 
 const useFirestore = (collection) => {
     const [docs, setDocs] = useState([]);
 
     useEffect(() => {
-        const unsub = projectFirestore
+        const unsub = database
             .collection("Books")
             .where("Category", "==", categoryNames[collection])
             .onSnapshot((snap) => {

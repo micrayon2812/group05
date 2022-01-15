@@ -41,7 +41,7 @@ function Navbar() {
                                             <div class="row d-flex tab">
                                                 <div class="fa-icon text-center"> <span class="fa fa-pencil  "></span> </div>
 
-                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Biographies">
 
                                                     <h6 class="mb-0">Biographies</h6> <small class="text-light">Click here for more</small>
                                                 </a> </div>
@@ -94,7 +94,7 @@ function Navbar() {
                                             <div class="row d-flex tab">
                                                 <div class="fa-icon text-center"> <span class="fa fa-camera-retro "></span> </div>
 
-                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Entertainment">
 
                                                     <h6 class="mb-0">Entertainment</h6> <small class="text-light">Click here for more</small>
                                                 </a> </div>

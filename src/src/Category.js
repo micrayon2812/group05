@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams, useRouteMatch } from "react-router-dom";
 import useFirestore from "./hooks/useFirestore";
+import "./Category.css";
 
 const Category = () => {
     const { category } = useParams();
@@ -13,7 +14,7 @@ const Category = () => {
 
             {docs && docs.map(doc => (
                 <div className="img-wrap" key={doc.id}>
-                    <a href={`/Book/${doc.id}`}><img src={doc.Cover} alt="uploaded pic" /></a>
+                    <a href={`/books/${doc.id}`}><img src={doc.Cover} alt="uploaded pic" /></a>
                 </div>
             ))}
 

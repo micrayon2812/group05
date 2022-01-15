@@ -1,5 +1,5 @@
 export const categoryNames = {
-	"ArtsvsMusic": "Arts Music",
+	"ArtsMusic": "Arts Music",
 	"Biographies": "Biographies",
 	"Comics": "Comics",
 	"ComputersvsTech": "Computers",
