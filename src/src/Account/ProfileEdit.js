@@ -43,6 +43,7 @@ function ProfileEdit() {
             age: Age,
             phone:Phone,
             profession:Profess
+
           }
           )
           .then((docRef) => {
