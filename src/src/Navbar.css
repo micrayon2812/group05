@@ -2,6 +2,12 @@ body{
     background-color: rgb(255, 255, 255)
 
 }
+
+.row{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
 .bg-white {
   
     background-color: rgb(255, 255, 255);
@@ -19,9 +25,11 @@ body{
 }
 
 .navbar-nav {
+    display: flex;
+    flex-direction: row;
     width: 88%;
-
 }
+
 .nav-item {
     padding: 20px 8px;
     margin: 0px 30px;

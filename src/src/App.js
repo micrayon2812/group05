@@ -9,6 +9,31 @@ import Navbar2 from "./Navbar2";
 import Record from "./Record";
 import TreeStore from './TreeStore';
 import Mybook from './Mybook';
+import Edit from "./EditProfile";
+import ArtsMusic from "./categories/ArtsMusic";
+import Biographies from "./categories/Biographies";
+import Comics from "./categories/Comics";
+import ComputersvsTech from "./categories/ComputersvsTech";
+import Cooking from "./categories/Cooking";
+import EduvsReference from "./categories/EduvsReference";
+import Entertainment from "./categories/Entertainment";
+import GayvsLesbian from "./categories/GayvsLesbian";
+import Health from "./categories/Health";
+import Horror from "./categories/Horror";
+import Kids from "./categories/Kids";
+import LiteraturevsFiction from "./categories/LiteraturevsFiction";
+import Mysteries from "./categories/Mysteries";
+import Others from "./categories/Others";
+import Religion from "./categories/Religion";
+import Romance from "./categories/Romance";
+import SciFivsFantasy from "./categories/Sci-FivsFantasy";
+import SciencevsMath from "./categories/SciencevsMath";
+import Sports from "./categories/Sports";
+import Teenfic from "./categories/Teenfic";
+import TrueCrime from "./categories/TrueCrime";
+
+import Lalala from "./lalala"
+import Book from './Book';
 import Signup from "./Signup";
 import { AuthProvider } from './contexts/AuthContext';
 import ProfileAbout from './Account/ProfileAbout';
@@ -21,6 +46,7 @@ function App() {
 
   return (
     <div>
+
       <AuthProvider>
         {/* <Route exact path="/" exact component={Login} />
         {path !== '/' && path !== '/Signup' && path !== '/Login' &&
@@ -46,6 +72,8 @@ function App() {
           <Route exact path="/ProfileEdit" component={ProfileEdit} />
           <Route exact path="/ArtsMusic" component={ArtsMusic} />
           <Route exact path="/books/:id" component={Books} />
+             <Route exact path="/Category/:category" component={Category} />
+        <Route exact path="/Book/:id" component={Book} />
         </Switch>
       </AuthProvider>
     </div>
@@ -53,4 +81,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; 
