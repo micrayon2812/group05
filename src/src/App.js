@@ -41,7 +41,6 @@ function App() {
 
   return (
     <div>
-
       {/* {path !== '/' &&
         <div>
           <Navbar />

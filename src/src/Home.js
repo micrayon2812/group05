@@ -2,12 +2,13 @@ import React from 'react'
 import { BiSearchAlt } from "react-icons/bi"
 import Background from "./img/halloween-wallpaper-with-cemetery-night.jpg"
 import "./Page.css";
+import Navbar from "./Navbar";
 
 function Home() {
 
   return (
 
-    <body  >
+    <body>
       <div style={{
         backgroundImage: `url(${Background})`, backgroundSize: `100%`, backgroundRepeat: `no-repeat`, height: '370px'
       }}>

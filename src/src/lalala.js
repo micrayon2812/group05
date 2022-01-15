@@ -38,19 +38,9 @@ const Lalala = () => {
     useEffect(() => console.log("data", data), [data])
     useEffect(() => console.log("comments", comments), [comments])
 
-    const submitComment = (e) => {
-        e.preventDefault();
-        db.collection("Arts&Music").doc(id).collection("comments").add({
-            comment: comment,
-            userName: props.user.displayName,
-            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-        });
-        setComment("");
-    };
 
     return (
         <div>
-            {/* <Navbar /> */}
             <div className="body">
                 <div className="flex-1-row">
                     <img src={data?.Cover} className="Cover" />
@@ -103,7 +93,6 @@ const Lalala = () => {
                                 type="submit"
                                 disabled={!comment}
                                 className="btn btn-post-comment"
-                                onClick={submitComment}
                             >
                                 Đăng
                             </button>
