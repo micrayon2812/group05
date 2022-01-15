@@ -28,24 +28,42 @@ function ProfileEdit() {
         });
       });
   }
-  const UpdateInfo = (e) => {
-
+  const UpdateInfo = (e,usermail) => {
+    e.preventDefault();
     database
-      .collection("User")
-      .doc(auth.currentUser.uid)
-      .update({
-        name: Name,
-        age: Age,
-        email: auth.currentUser.email,
-        phone:Phone,
-        profession:Profess,
-      })
-      .then((docRef) => {
-        alert("Update Info Successfully Published");
-      })
-      .catch((error) => {
-        console.error("Error Update Info: ", error);
+    .collection("User")
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((element) => {
+        var data = element.data();
+        var id =element.id;
+        if (data.email == usermail) {
+          database.collection("User").doc(id).update({
+            name: Name,
+            age: Age,
+            phone:Phone,
+            profession:Profess
+          }
+          )
+          .then((docRef) => {
+            alert("Update Info Successfully");
+          })
+          .catch((error) => {
+            console.error("Error Update Info: ", error);
+          });
+        }
       });
+    });
+    // database
+    //   .collection("User")
+    //   .document(auth.currentUser.uid)
+    //   .update(updatedata)
+      // .then((docRef) => {
+      //   alert("Update Info Successfully");
+      // })
+      // .catch((error) => {
+      //   console.error("Error Update Info: ", error);
+      // });
     
   }
   return (
@@ -136,7 +154,7 @@ function ProfileEdit() {
             </div>
           </div>
           <form class="col-md-8" onSubmit={(e) => {
-          UpdateInfo(e);
+          UpdateInfo(e,info.email);
         }}>
             <div class="row">
               <div class="col-md-6">
