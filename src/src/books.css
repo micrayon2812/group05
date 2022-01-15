@@ -1,0 +1,159 @@
+.body{
+    display: flex;
+    flex-direction: column;
+    width: 1222px;
+    margin: 0 auto;
+    gap: 50px;
+}
+
+.flex-1-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-2-row{
+    display: flex;
+    flex-direction: row;
+}
+.button{
+    border: solar;
+    border-radius:1px;
+    border-color: #AEABA6;
+  color: black;
+  padding: 12px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: #F4F1EA;
+}
+
+.flex1{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.button1{
+    border: solar;
+    border-radius:1px;
+    border-color: #AEABA6;
+  color: black;
+  padding: 8px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: #F4F1EA;
+}
+.title{
+    /* position: absolute; */
+font-family: Frank Ruhl Libre;
+font-style: normal;
+font-weight: bold;
+font-size: 43px;
+line-height: 56px;
+}
+
+.author{
+    /* position: absolute; */
+font-family: Frank Ruhl Libre;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 31px;
+}
+
+.genre{
+    /* position: absolute; */
+
+font-family: Frank Ruhl Libre;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 26px;
+/* identical to box height */
+}
+
+.summary{
+    /* position: absolute; */
+
+font-family: Frank Ruhl Libre;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 26px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    padding-left: 31px;
+}
+.wherebuy{
+    /* position: absolute; */
+
+font-family: Arial;
+font-style: normal;
+font-weight: bold;
+font-size: 19px;
+line-height: 22px;
+}
+
+.Cover{
+    /* position: absolute; */
+    padding-top: 53px;
+    width: 175px;
+    height: 245px;
+}
+
+.topreiview{
+    /* position: absolute; */
+
+font-family: Arial;
+font-style: normal;
+font-weight: bold;
+font-size: 19px;
+line-height: 25px;
+}
+.padd{
+    padding-bottom: 8px;
+}
+.row{
+    flex-grow:1;
+}
+
+.avatar{
+    width: 73px;
+    height: 69px;
+}
+
+.namerate{
+    width: 163px;
+height: 20px;
+    font-family: Arial;
+font-style: normal;
+font-weight: bold;
+font-size: 17px;
+line-height: 20px;
+/* identical to box height */
+
+display: flex;
+align-items: center;
+}
+
+.comment{
+    width: 1111px;
+    height: 78px;
+    font-family: Frank Ruhl Libre;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 26px;
+}
+
+.post__comment--list {
+	padding: 0 16px;
+}

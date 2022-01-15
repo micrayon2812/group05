@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Link } from "react-router-dom";
+import { Route, Link, Switch } from "react-router-dom";
 import Login from "./Login";
 import Home from "./Home";
 import Category from "./Category";
@@ -14,6 +14,7 @@ import { AuthProvider } from './contexts/AuthContext';
 import ProfileAbout from './Account/ProfileAbout';
 import ProfileEdit from './Account/ProfileEdit';
 import ArtsMusic from "./category/ArtsMusic";
+import Books from "./books";
 
 function App() {
   const path = window.location.pathname;
@@ -21,7 +22,7 @@ function App() {
   return (
     <div>
       <AuthProvider>
-        <Route exact path="/" exact component={Login} />
+        {/* <Route exact path="/" exact component={Login} />
         {path !== '/' && path !== '/Signup' && path !== '/Login' &&
           <div>
             <Navbar />
@@ -31,18 +32,21 @@ function App() {
           <div>
             <Navbar2 />
           </div>
-        }
-        <Route exact path="/Home" component={Home} />
-        <Route exact path="/Signup" component={Signup} />
-        <Route exact path="/Login" component={Login} />
-        <Route exact path="/Category" component={Category} />
-        <Route exact path="/Aboutus" component={Aboutus} />
-        <Route exact path="/Record" component={Record} />
-        <Route exact path="/TreeStore" component={TreeStore} />
-        <Route exact path="/MyBook" component={Mybook} />
-        <Route exact path="/ProfileAbout" component={ProfileAbout} />
-        <Route exact path="/ProfileEdit" component={ProfileEdit} />
-        <Route exact path="/ArtsMusic" component={ArtsMusic} />
+        } */}
+        <Switch>
+          <Route exact path="/Home" component={Home} />
+          <Route exact path="/Signup" component={Signup} />
+          <Route exact path="/Login" component={Login} />
+          <Route exact path="/Category" component={Category} />
+          <Route exact path="/Aboutus" component={Aboutus} />
+          <Route exact path="/Record" component={Record} />
+          <Route exact path="/TreeStore" component={TreeStore} />
+          <Route exact path="/MyBook" component={Mybook} />
+          <Route exact path="/ProfileAbout" component={ProfileAbout} />
+          <Route exact path="/ProfileEdit" component={ProfileEdit} />
+          <Route exact path="/ArtsMusic" component={ArtsMusic} />
+          <Route exact path="/books/:id" component={Books} />
+        </Switch>
       </AuthProvider>
     </div>
 
