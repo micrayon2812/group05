@@ -14,15 +14,15 @@ function Navbar() {
         <div class="container-fluid1 px-0 ">
             <nav class="navbar navbar-expand-md navbar-light bg-darkblue p-0" >
                 <div class="collapse navbar-collapse" id="navbarNav" >
-                    <ul class="navbar-nav">
-                        <li class="nav-item" >
+                    <div class="navbar-nav">
+                        <div class="nav-item" >
                             <a class="nav-link " href="/Home" >Home</a>
-                        </li>
-                        <li class="nav-item">
+                        </div>
+                        <div class="nav-item">
                             <a class="nav-link " href="/Aboutus" >About Us</a>
 
-                        </li>
-                        <li class="nav-item"> <a class="nav-link" href="/Category" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category<span class="fa fa-angle-down"></span></a>
+                        </div>
+                        <div class="nav-item"> <a class="nav-link" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category<span class="fa fa-angle-down"></span></a>
 
                             <div class="dropdown-menu" id="dropdown-menu1" aria-labelledby="navbarDropdown1">
                                 <div class="container">
@@ -31,7 +31,7 @@ function Navbar() {
                                             <div class="row d-flex tab">
                                                 <div class="fa-icon text-center"> <span class="fa fa-music"></span> </div>
 
-                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/ArtsMusic">
+                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category/ArtsMusic">
 
                                                     <h6 class="mb-0"> Arts &amp; Music</h6> <small class="text-light">Click here for more</small>
                                                 </a> </div>
@@ -62,7 +62,7 @@ function Navbar() {
                                             <div class="row d-flex tab">
                                                 <div class="fa-icon text-center"> <span class="fa fa-desktop  "></span> </div>
 
-                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="#">
+                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category/ComputersvsTech">
 
                                                     <h6 class="mb-0">Computers 	&amp; Tech</h6><small class="text-light">Click here for more</small>
                                                 </a> </div>
@@ -255,16 +255,16 @@ function Navbar() {
                                 </div>
                             </div>
 
-                        </li>
+                        </div>
 
 
-                        <li class="nav-item">
+                        <div class="nav-item">
                             <a class="nav-link " href="/Record" >Publish</a>
-                        </li>
-                        <li class="nav-item">
+                        </div>
+                        <div class="nav-item">
                             <a class="nav-link " href="/TreeStore" >Tree Store</a>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                     <div class="dropdown" >
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false" >

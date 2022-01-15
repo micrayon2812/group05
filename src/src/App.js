@@ -38,7 +38,6 @@ function App() {
           <Route exact path="/Home" component={Home} />
           <Route exact path="/Signup" component={Signup} />
           <Route exact path="/Login" component={Login} />
-          <Route exact path="/Category" component={Category} />
           <Route exact path="/Aboutus" component={Aboutus} />
           <Route exact path="/Record" component={Record} />
           <Route exact path="/TreeStore" component={TreeStore} />
