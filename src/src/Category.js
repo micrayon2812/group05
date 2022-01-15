@@ -1,18 +1,24 @@
-import React from 'react'
-import { Route, Switch, useRouteMatch } from 'react-router-dom'
-import Lalala from './lalala';
+import React from "react";
+import { useParams, useRouteMatch } from "react-router-dom";
+import useFirestore from "./hooks/useFirestore";
 
-function Category() {
-    const { path } = useRouteMatch();
-    console.log("path", path)
+const Category = () => {
+    const { category } = useParams();
+
+    const { docs } = useFirestore(category);
+    console.log("docs", docs);
+
     return (
-        <Switch>
-            <Route exact path={path}>
-                <h3>Please select a topic.</h3>
-            </Route>
-            <Route exact path={`${path}/lalala`} component={Lalala} />
-        </Switch>
+        <div className="img-grid">
+
+            {docs && docs.map(doc => (
+                <div className="img-wrap" key={doc.id}>
+                    <a href={`/Book/${doc.id}`}><img src={doc.Cover} alt="uploaded pic" /></a>
+                </div>
+            ))}
+
+        </div>
     )
 }
 
-export default Category
+export default Category;
