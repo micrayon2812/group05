@@ -9,7 +9,7 @@ const ArtsMusic = () => {
         <div className="img-grid">
             {docs && docs.map(doc => (
                 <div className="img-wrap" key={doc.id}>
-                    <a href={`/lalala`}><img src={doc.Cover} alt="uploaded pic" /></a>
+                    <a href={`/lalala/` + doc.id}><img src={doc.Cover} alt="uploaded pic" /></a>
                 </div>
             ))}
         </div>

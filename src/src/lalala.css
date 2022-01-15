@@ -128,3 +128,7 @@ align-items: center;
     font-size: 20px;
     line-height: 26px;
 }
+
+.post__comment--list {
+	padding: 0 16px;
+}
