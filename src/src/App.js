@@ -5,7 +5,6 @@ import Home from "./Home";
 import Category from "./Category";
 import Navbar from './Navbar';
 import Aboutus from './Aboutus';
-import Account from "./Profile";
 import Navbar2 from "./Navbar2";
 import Record from "./Record";
 import TreeStore from './TreeStore';
@@ -35,40 +34,50 @@ import TrueCrime from "./categories/TrueCrime";
 
 import Lalala from "./lalala"
 import Book from './Book';
-
+import Signup from "./Signup";
+import { AuthProvider } from './contexts/AuthContext';
+import ProfileAbout from './Account/ProfileAbout';
+import ProfileEdit from './Account/ProfileEdit';
+import ArtsMusic from "./category/ArtsMusic";
+import Books from "./books";
 
 function App() {
   const path = window.location.pathname;
 
   return (
     <div>
-      {/* {path !== '/' &&
-        <div>
-          <Navbar />
-        </div>
-      }
-      {path !== '/' && path !== '/Home' && path !== '/Account' &&
-        <div>
-          <Navbar2 />
-        </div>
-      } */}
-      <Switch>
-        <Route exact path="/" exact component={Login} />
-        <Route exact path="/Home" component={Home} />
-        <Route exact path="/Category">
-          <Category />
-        </Route>
-        <Route exact path="/Aboutus" component={Aboutus} />
-        <Route exact path="/Profile" component={Account} />
-        <Route exact path="/Record" component={Record} />
-        <Route exact path="/TreeStore" component={TreeStore} />
-        <Route exact path="/MyBook" component={Mybook} />
-        <Route exact path="/EditProfile" component={Edit} />
-        <Route exact path="/Category/:category" component={Category} />
-        <Route exact path="/Book/:id" component={Book} />
-      </Switch>
 
-    </div >
+      <AuthProvider>
+        {/* <Route exact path="/" exact component={Login} />
+        {path !== '/' && path !== '/Signup' && path !== '/Login' &&
+          <div>
+            <Navbar />
+          </div>
+        }
+        {path !== '/' && path !== '/Signup' && path !== '/Login' && path !== '/Home' && path !== '/Account' &&
+          <div>
+            <Navbar2 />
+          </div>
+        } */}
+        <Switch>
+          <Route exact path="/Home" component={Home} />
+          <Route exact path="/Signup" component={Signup} />
+          <Route exact path="/Login" component={Login} />
+          <Route exact path="/Category" component={Category} />
+          <Route exact path="/Aboutus" component={Aboutus} />
+          <Route exact path="/Record" component={Record} />
+          <Route exact path="/TreeStore" component={TreeStore} />
+          <Route exact path="/MyBook" component={Mybook} />
+          <Route exact path="/ProfileAbout" component={ProfileAbout} />
+          <Route exact path="/ProfileEdit" component={ProfileEdit} />
+          <Route exact path="/ArtsMusic" component={ArtsMusic} />
+          <Route exact path="/books/:id" component={Books} />
+             <Route exact path="/Category/:category" component={Category} />
+        <Route exact path="/Book/:id" component={Book} />
+        </Switch>
+      </AuthProvider>
+    </div>
+
   );
 }
 
