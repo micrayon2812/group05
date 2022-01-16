@@ -32,25 +32,25 @@ const Books = () => {
             });
 
     }, [id])
-    const CheckBuy = (e,buylink) => {
+    const CheckBuy = (e, buylink) => {
 
         e.preventDefault();
 
-        if(buylink!=""){
+        if (buylink != "") {
             window.location.href = buylink
         }
-        else{
+        else {
             alert("There is no Ebook Link")
         }
 
     }
-    const CheckEbook = (e,ebooklink) => {
+    const CheckEbook = (e, ebooklink) => {
         e.preventDefault();
 
-        if(ebooklink!=""){
+        if (ebooklink != "") {
             window.location.href = ebooklink
         }
-        else{
+        else {
             alert("There is no Buy Link")
         }
 
@@ -62,7 +62,7 @@ const Books = () => {
         e.preventDefault();
 
         const user = auth.currentUser;
-        
+
 
         database.collection("Books").doc(id).collection("comments").add({
             comment: comment,
@@ -88,25 +88,22 @@ const Books = () => {
                         <div className="summary">
                             <p>{data?.Des}</p>
                         </div>
+                        <hr width="100%" align="center" color="black" />
                         <div className="wherebuy">
                             <p>WHERE TO READ</p>
                         </div>
                         <div className="flew-2-row">
-                            <a className="button"onClick={(e) => {
-          CheckBuy(e,data?.Buy);
-        }}>Buy</a>
                             <a className="button" onClick={(e) => {
-          CheckEbook(e,data?.Ebook);
-        }}>E-book</a>
+                                CheckBuy(e, data?.Buy);
+                            }}>Buy</a>
+                            <a className="button" onClick={(e) => {
+                                CheckEbook(e, data?.Ebook);
+                            }}>E-book</a>
                         </div>
                     </div>
                 </div >
 
-
                 <div className="topreview"  >
-                    <div className="padd">
-                        <b>COMMUNITY REVIEWS</b>
-                    </div>
                     <div className="post__comment">
                         <form>
                             <span>
@@ -120,24 +117,34 @@ const Books = () => {
                                 onChange={(e) => setComment(e.target.value)}
                             />
                             <div className="flex1">
-                            <button
-	type="submit"
-	disabled={!comment}
-	className="button1"
-	onClick={upComment}
->
-	Post
-</button>
+                                <button
+                                    type="submit"
+                                    disabled={!comment}
+                                    className="button1"
+                                    onClick={upComment}
+                                >
+                                    Post
+                                </button>
 
                             </div>
                         </form>
                     </div>
+                    <div>
+                        <b>COMMUNITY REVIEWS</b>
+                    </div>
+                    <hr width="100%" align="center" color="black" />
                     <div className="flex-1-row">
-                        <div className="post__comment--list">
+                        <div>
                             {comments?.map(({ id, cmt }) => (
-                                <p key={id} className="post__comment--item">
-                                    <b>{cmt.userName}</b> {cmt.comment}
-                                </p>
+                                <div key={id} className="post__comment--item">
+                                    <div className="username">{cmt.userName}</div>
+                                    <div className="comment">{cmt.comment}</div>
+                                    <div className="flew-2-row num">
+                                        <button className="button2">like</button>
+                                        <button className="button2">comment</button>
+                                        &ensp; 50 likes &nbsp; 10 comments
+                                    </div>
+                                </div>
                             ))}
                         </div>
                     </div>

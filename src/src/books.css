@@ -3,7 +3,7 @@
     flex-direction: column;
     width: 1222px;
     margin: 0 auto;
-    gap: 50px;
+    gap: 39px;
 }
 
 .flex-1-row{
@@ -17,19 +17,31 @@
 }
 .button{
     border: solar;
-    border-radius:1px;
-    border-color: #AEABA6;
+    border-color: black;
   color: black;
   padding: 12px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 4px 5px;
   cursor: pointer;
   background-color: #F4F1EA;
+  border-radius: 2px;
 }
 
+.num{
+    font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 20px;
+align-items: center ;
+/* identical to box height */
+
+
+color: #5871CA;
+}
 .flex1{
     display: flex;
     flex-direction: row-reverse;
@@ -47,6 +59,22 @@
   margin: 4px 2px;
   cursor: pointer;
   background-color: #F4F1EA;
+  border-radius: 5px;
+}
+.button2{
+    border: solar;
+    border-radius:1px;
+    border-color: #AEABA6;
+  color: black;
+  padding: 3px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 7px 2px;
+  cursor: pointer;
+  background-color: #F4F1EA;
+  border-radius:5px;
 }
 .title{
     /* position: absolute; */
@@ -156,4 +184,28 @@ align-items: center;
 
 .post__comment--list {
 	padding: 0 16px;
+}
+
+.username{
+    font-family: Arial;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 20px;
+    /* identical to box height */
+    
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    color: #5871CA;
+}
+
+.comment{
+    font-family: Frank Ruhl Libre;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 26px;
+
+color: #000000;
 }

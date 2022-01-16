@@ -1,29 +1,53 @@
-import React from 'react'
-import { BiSearchAlt } from "react-icons/bi"
-import Background from "./img/5208116.jpg"
+import React from 'react';
+import { BiSearchAlt } from "react-icons/bi";
+import Background from "./img/5208116.jpg";
 import "./Page.css";
 import Navbar from "./Navbar";
 import useFirestore1 from './hooks/useFirestore1';
+import { database } from "./Database/Firebase";
+import { useState } from "react";
 
 function Home() {
-  const { docs } = useFirestore1('Books');
-  console.log("docs", docs);
+  const a = useFirestore1('Books');
 
+  const search = () => {
+    var s;
+    if (document.getElementById("txtname") != null) { s = document.getElementById("txtname").value; }
+    else { s = null; }
+    console.log("s", s);
+    database
+      .collection("Books")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((element) => {
+          var data = element.data();
+          if (data.Name == s) {
+            var str = window.location.href;
+            var string = str.replace('/Home', '') + '/books-' + element.id;
+            console.log("string", string);
+            window.open(string, "_blank");
+          }
+        });
+      });
+  }
   return (
 
     <body>
       <div style={{
         backgroundImage: `url(${Background})`, backgroundSize: `100%`, backgroundRepeat: `no-repeat`, height: '370px'
       }}>
-        <h3 style={{ color: 'purple', paddingTop: `6%`, paddingLeft: `37%`, paddingRight: `38%`,fontSize:`40px` }}>What are you reading?</h3>
-        <div class="input-group bg-img fade" style={{ paddingTop: `2%`, paddingLeft: `35%`, paddingRight: `35%`, }}>
-          <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+        <h3 className='title' style={{ color: 'black', paddingTop: `6%`, paddingLeft: `32%`, fontSize: `53px` }}>Free books for everyone</h3>
+        <h2 className='title' style={{ color: 'black', paddingTop: `0%`, paddingLeft: `36.5%`, fontSize: `38px` }}>Find books and reviews</h2>
+        <div class="input-group bg-img fade" style={{ paddingTop: `1%`, paddingLeft: `23%`, paddingRight: `23%`, }}>
+          <input id="txtname" type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
             aria-describedby="search-addon" />
-          <a type="button" class="btn btn-outline-home" href="/Aboutus">search</a> </div>
+          {/* <a type="button" class="btn btn-outline-home" href="#">search</a> */}
+          <button type="button" className='btn btn-outline-home' onClick={search}>Search</button>
+        </div>
       </div>
       <div className='padd'>
         <div className="img-grid1">
-          {docs && docs.map(doc => (
+          {a.docs && a.docs.map(doc => (
             <div>
               <div className="img-wrap1" key={doc.id}>
                 <a href={`/books-${doc.id}`}><img src={doc.Cover} alt="uploaded pic" /></a>
