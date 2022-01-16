@@ -38,9 +38,7 @@ function Aboutus() {
                   <div class="feature-content">
                     <h4>Work with heart</h4>
                     <p>
-                      Aenean vulputate eleifend tellus. Aenean leo ligula,
-                      porttitor eu, consequat vitae, eleifend ac, enim. Aliquam
-                      lorem ante, dapibus in.
+                    Our team tries our best to provide the best interface for user. 
                     </p>
                   </div>
                 </div>
