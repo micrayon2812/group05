@@ -22,7 +22,7 @@ function Navbar() {
     
         try {
           await logout()
-          history.push("/Login")
+          //history.push("/Login")
         } catch {
           setError("Failed to log out")
         }
@@ -291,11 +291,10 @@ function Navbar() {
                         <div class="dropdown-menu" aria-labelledby="triggerId">
 
                             <a class="dropdown-item" href="/ProfileAbout">Profile</a>
-
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/MyBook">My book</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" onClick={handleLogout}>Log out</a>
+                            <a class="dropdown-item" onClick={handleLogout} href="/">Log out</a>
                             <div class="dropdown-divider"></div>
                         </div>
                     </div>
