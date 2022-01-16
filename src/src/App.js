@@ -17,7 +17,7 @@ import { AuthProvider } from './contexts/AuthContext';
 import ProfileAbout from './Account/ProfileAbout';
 import ProfileEdit from './Account/ProfileEdit';
 import Books from "./books";
-
+import ProfilePlanting from './Account/ProfilePlanting';
 function App() {
   const path = window.location.pathname;
 
@@ -48,6 +48,7 @@ function App() {
             <PrivateRoute path="/ProfileEdit" component={ProfileEdit} />
             <PrivateRoute path="/Category-:category" component={Category} />
             <PrivateRoute path="/books-:id" component={Books} />
+            <PrivateRoute path="/ProfilePlanting" component={ProfilePlanting} />
           </Switch>
         </AuthProvider>
       </Router>

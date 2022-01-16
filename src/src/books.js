@@ -2,16 +2,15 @@ import React, { useEffect, useState } from "react";
 import "./books.css"
 import { useParams } from "react-router-dom";
 import { database } from "./Database/Firebase";
+import { auth } from "./firebase";
 
 
 const Books = () => {
     const [data, setData] = useState(null);
-    const [comments, setComments] = useState(null);
+    const [comments, setComments] = useState([]);
     const [comment, setComment] = useState("");
     const { id } = useParams();
-
     // const { comments } = commentFirestore('Arts&Music');
-
     useEffect(() => {
         const documents = [];
         const doc = database
@@ -59,10 +58,21 @@ const Books = () => {
     useEffect(() => console.log("data", data), [data])
     useEffect(() => console.log("comments", comments), [comments])
 
+    const upComment = (e) => {
+        e.preventDefault();
 
+        const user = auth.currentUser;
+        
+
+        database.collection("Books").doc(id).collection("comments").add({
+            comment: comment,
+            userName: user.email
+        });
+        setComment("");
+    };
     return (
         < div >
-            <div className="body">
+            <div className="body"  >
                 <div className="flex-1-row">
                     <img src={data?.Cover} className="Cover" />
                     <div className="info">
@@ -93,7 +103,7 @@ const Books = () => {
                 </div >
 
 
-                <div className="topreview">
+                <div className="topreview"  >
                     <div className="padd">
                         <b>COMMUNITY REVIEWS</b>
                     </div>
@@ -110,13 +120,15 @@ const Books = () => {
                                 onChange={(e) => setComment(e.target.value)}
                             />
                             <div className="flex1">
-                                <button
-                                    type="submit"
-                                    disabled={!comment}
-                                    className="button1"
-                                >
-                                    Post
-                                </button>
+                            <button
+	type="submit"
+	disabled={!comment}
+	className="button1"
+	onClick={upComment}
+>
+	Post
+</button>
+
                             </div>
                         </form>
                     </div>

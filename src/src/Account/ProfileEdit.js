@@ -55,16 +55,7 @@ function ProfileEdit() {
         }
       });
     });
-    // database
-    //   .collection("User")
-    //   .document(auth.currentUser.uid)
-    //   .update(updatedata)
-      // .then((docRef) => {
-      //   alert("Update Info Successfully");
-      // })
-      // .catch((error) => {
-      //   console.error("Error Update Info: ", error);
-      // });
+
     
   }
   return (
@@ -84,10 +75,22 @@ function ProfileEdit() {
               <h5>{info.name}</h5>
               <h6>User</h6>
               <p class="proile-rating">
-                Plant Level : <span>100%</span>
+                Plant Level : <span>1</span>
               </p>
               <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item Acc">
+                  <a
+                    class="nav-link"
+                    id="home-tab"
+                    href="/ProfileAbout"
+                    role="tab"
+                    aria-controls="home"
+                    aria-selected="true"
+                  >
+                    Profile
+                  </a>
+                </li>
+                <li class="nav-item Acc ">
                   <a
                     class="nav-link active"
                     id="home-tab"
@@ -96,9 +99,10 @@ function ProfileEdit() {
                     aria-controls="home"
                     aria-selected="true"
                   >
-                    About
+                    EditProfile
                   </a>
                 </li>
+
                 <li class="nav-item Acc">
                   <a
                     class="nav-link"
@@ -111,26 +115,11 @@ function ProfileEdit() {
                     Planting
                   </a>
                 </li>
-                <li class="nav-item Acc">
-                  <a
-                    class="nav-link"
-                    id="library-tab"
-                    href="/ProfileLibrary"
-                    role="tab"
-                    aria-controls="library"
-                    aria-selected="false"
-                  >
-                    Library
-                  </a>
-                </li>
               </ul>
+              
             </div>
           </div>
-          <div class="col-md-2">
-            <Link to="/ProfileAbout" id="profile-edit-btn">
-              Profile
-            </Link>
-          </div>
+         
         </div>
         <div class="row">
           <div class="col-md-4">

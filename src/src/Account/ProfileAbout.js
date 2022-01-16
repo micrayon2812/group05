@@ -39,7 +39,7 @@ function ProfileAbout() {
               <h5>{info.name}</h5>
               <h6>User</h6>
               <p class="proile-rating">
-                Plant Level : <span>100%</span>
+                Plant Level : <span>1</span>
               </p>
               <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item Acc">
@@ -51,7 +51,19 @@ function ProfileAbout() {
                     aria-controls="home"
                     aria-selected="true"
                   >
-                    About
+                    Profile
+                  </a>
+                </li>
+                <li class="nav-item Acc">
+                  <a
+                    class="nav-link"
+                    id="home-tab"
+                    href="/ProfileEdit"
+                    role="tab"
+                    aria-controls="home"
+                    aria-selected="true"
+                  >
+                    EditProfile
                   </a>
                 </li>
                 <li class="nav-item Acc">
@@ -66,26 +78,11 @@ function ProfileAbout() {
                     Planting
                   </a>
                 </li>
-                <li class="nav-item Acc">
-                  <a
-                    class="nav-link"
-                    id="library-tab"
-                    href="/ProfileLibrary"
-                    role="tab"
-                    aria-controls="library"
-                    aria-selected="false"
-                  >
-                    Library
-                  </a>
-                </li>
+              
               </ul>
             </div>
           </div>
-          <div class="col-md-2">
-            <Link to="/ProfileEdit" id="profile-edit-btn">
-              Edit Profile
-            </Link>
-          </div>
+        
         </div>
         <div class="row">
           <div class="col-md-4">
