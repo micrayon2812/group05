@@ -14,9 +14,9 @@ function Aboutus() {
               </p>
               <p class="aboutus-text">
               The book categories are various so that you can easily 
-              reach the books you want to read at the moment or for the 
+              reach the books to read at the moment or for the 
               future. Besides, we also provides link which you can choose 
-              to buy book or e-book.
+              to buy paper book or e-book.
               </p>
             </div>
           </div>
