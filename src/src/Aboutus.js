@@ -51,9 +51,7 @@ function Aboutus() {
                   <div class="feature-content">
                     <h4>Reliable services</h4>
                     <p>
-                      Donec vitae sapien ut libero venenatis faucibu. Nullam
-                      quis ante. Etiam sit amet orci eget eros faucibus
-                      tincidunt
+                    We provide you with reliable links, so that you can buy it without any trouble.
                     </p>
                   </div>
                 </div>
