@@ -94,7 +94,6 @@ const Books = () => {
                         </form>
                     </div>
                     <div className="flex-1-row">
-                        <div className="avatar">image</div>
                         <div className="post__comment--list">
                             {comments?.map(({ id, cmt }) => (
                                 <p key={id} className="post__comment--item">

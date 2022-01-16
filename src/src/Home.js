@@ -3,8 +3,11 @@ import { BiSearchAlt } from "react-icons/bi"
 import Background from "./img/halloween-wallpaper-with-cemetery-night.jpg"
 import "./Page.css";
 import Navbar from "./Navbar";
+import useFirestore1 from './hooks/useFirestore1';
 
 function Home() {
+  const { docs } = useFirestore1('Books');
+  console.log("docs", docs);
 
   return (
 
@@ -18,8 +21,22 @@ function Home() {
             aria-describedby="search-addon" />
           <a type="button" class="btn btn-outline-home" href="/Aboutus">search</a> </div>
       </div>
+      <div className='padd'>
+        <div className="img-grid1">
+          {docs && docs.map(doc => (
+            <div>
+              <div className="img-wrap1" key={doc.id}>
+                <a href={`/books-${doc.id}`}><img src={doc.Cover} alt="uploaded pic" /></a>
+              </div>
+              <div className='text'>
+                <a href={`/books-${doc.id}`} > {doc.Name}</a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
-    </body>
+    </body >
   )
 }
 
