@@ -64,7 +64,7 @@ function Login() {
                                 <div class="form-check custom-control custom-checkbox custom-control-inline"> <input id="chk1" type="checkbox" name="chk" class="custom-control-input" /> <label for="chk1" class="form-check-label custom-control-label text-sm">Remember me</label> </div> 
                             </div>
                             {error && <Alert variant="danger">{error}</Alert>}
-                            <div class="row mb-3 px-3" style={{color:`white`}}> <button type="submit" class="btn btn-blue text-center" disable={loading} to="/Home">Log in</button></div>
+                            <div class="row mb-3 px-3" style={{color:`white`}}> <button type="submit" class="btn btn-blue text-center" disable={loading}>Log in</button></div>
                             <div class="row mb-4 px-3"> <small class="font-weight-bold">Don't have an account? <Link class="text-danger" to="/Signup">Register</Link></small> </div>
                         </form>
                     </div>
