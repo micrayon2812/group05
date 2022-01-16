@@ -9,6 +9,7 @@ const Books = () => {
     const [comments, setComments] = useState(null);
     const [comment, setComment] = useState("");
     const { id } = useParams();
+
     // const { comments } = commentFirestore('Arts&Music');
 
     useEffect(() => {
@@ -32,7 +33,29 @@ const Books = () => {
             });
 
     }, [id])
+    const CheckBuy = (e,buylink) => {
 
+        e.preventDefault();
+
+        if(buylink!=""){
+            window.location.href = buylink
+        }
+        else{
+            alert("There is no Ebook Link")
+        }
+
+    }
+    const CheckEbook = (e,ebooklink) => {
+        e.preventDefault();
+
+        if(ebooklink!=""){
+            window.location.href = ebooklink
+        }
+        else{
+            alert("There is no Buy Link")
+        }
+
+    }
     useEffect(() => console.log("data", data), [data])
     useEffect(() => console.log("comments", comments), [comments])
 
@@ -59,8 +82,12 @@ const Books = () => {
                             <p>WHERE TO READ</p>
                         </div>
                         <div className="flew-2-row">
-                            <a className="button" href={data?.Buy}>Buy</a>
-                            <a className="button" href={data?.Ebook}>E-book</a>
+                            <a className="button"onClick={(e) => {
+          CheckBuy(e,data?.Buy);
+        }}>Buy</a>
+                            <a className="button" onClick={(e) => {
+          CheckEbook(e,data?.Ebook);
+        }}>E-book</a>
                         </div>
                     </div>
                 </div >

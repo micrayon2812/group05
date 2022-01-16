@@ -3,6 +3,7 @@ import {Link, useHistory} from "react-router-dom";
 import {BsFacebook, BsTwitter, BsLinkedin} from "react-icons/bs";
 import {useAuth} from "./contexts/AuthContext";
 import {Alert} from "react-bootstrap"
+import picture from "./img/13258.jpg" 
 
 function Login() {
     const emailRef = useRef()
@@ -31,8 +32,7 @@ function Login() {
             <div class="row d-flex">
                 <div class="col-lg-6">
                     <div class="card1 pb-5">
-                        <div class="row"> <img src="https://i.imgur.com/CXQmsmF.png" class="logo" /> </div>
-                        <div class="row px-3 justify-content-center mt-4 mb-5 border-line"> <img src="https://i.imgur.com/uNGdWHi.png" class="image" /> </div>
+                        <div class="row px-3 justify-content-center mt-4 mb-5 border-line"> <img src={picture} class="image" /> </div>
                     </div>
                 </div>
                 <div class="col-lg-6">

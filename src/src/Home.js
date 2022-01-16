@@ -1,6 +1,6 @@
 import React from 'react'
 import { BiSearchAlt } from "react-icons/bi"
-import Background from "./img/halloween-wallpaper-with-cemetery-night.jpg"
+import Background from "./img/5208116.jpg"
 import "./Page.css";
 import Navbar from "./Navbar";
 import useFirestore1 from './hooks/useFirestore1';
@@ -15,7 +15,7 @@ function Home() {
       <div style={{
         backgroundImage: `url(${Background})`, backgroundSize: `100%`, backgroundRepeat: `no-repeat`, height: '370px'
       }}>
-        <h3 style={{ color: 'white', paddingTop: `6%`, paddingLeft: `40%`, paddingRight: `35%` }}>What are you reading?</h3>
+        <h3 style={{ color: 'purple', paddingTop: `6%`, paddingLeft: `37%`, paddingRight: `38%`,fontSize:`40px` }}>What are you reading?</h3>
         <div class="input-group bg-img fade" style={{ paddingTop: `2%`, paddingLeft: `35%`, paddingRight: `35%`, }}>
           <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
             aria-describedby="search-addon" />
