@@ -9,14 +9,14 @@ function Aboutus() {
             <div class="aboutus">
               <h2 class="aboutus-title">About Us</h2>
               <p class="aboutus-text">
-                Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor
-                eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante,
-                dapibus in.
+              Starting in 2021 our goal is to bring the best review, 
+              recommended book for bookworms all over the world.
               </p>
               <p class="aboutus-text">
-                This is Photoshop's version of Lorem Ipsum. Proin gravida nibh
-                vel velit auctor aliquet. Aenean sollicitudin, lorem quis
-                bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
+              The book categories are various so that you can easily 
+              reach the books to read at the moment or for the 
+              future. Besides, we also provides link which you can choose 
+              to buy paper book or e-book.
               </p>
             </div>
           </div>
@@ -38,9 +38,7 @@ function Aboutus() {
                   <div class="feature-content">
                     <h4>Work with heart</h4>
                     <p>
-                      Aenean vulputate eleifend tellus. Aenean leo ligula,
-                      porttitor eu, consequat vitae, eleifend ac, enim. Aliquam
-                      lorem ante, dapibus in.
+                    Our team tries our best to provide the best interface for user. 
                     </p>
                   </div>
                 </div>
@@ -53,9 +51,7 @@ function Aboutus() {
                   <div class="feature-content">
                     <h4>Reliable services</h4>
                     <p>
-                      Donec vitae sapien ut libero venenatis faucibu. Nullam
-                      quis ante. Etiam sit amet orci eget eros faucibus
-                      tincidunt
+                    We provide you with reliable links, so that you can buy it without any trouble.
                     </p>
                   </div>
                 </div>
@@ -68,9 +64,7 @@ function Aboutus() {
                   <div class="feature-content">
                     <h4>Great support</h4>
                     <p>
-                      Aenean vulputate eleifend tellus. Aenean leo ligula,
-                      porttitor eu, consequat vitae, eleifend ac, enim. Aliquam
-                      lorem ante, dapibus in.
+                    If you have any question or feedback, feel free to contact us.
                     </p>
                   </div>
                 </div>

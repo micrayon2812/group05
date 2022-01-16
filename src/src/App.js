@@ -46,12 +46,12 @@ function App() {
             <PrivateRoute path="/MyBook" component={Mybook} />
             <PrivateRoute path="/ProfileAbout" component={ProfileAbout} />
             <PrivateRoute path="/ProfileEdit" component={ProfileEdit} />
-            <PrivateRoute path="/Category/:category" component={Category} />
-            <PrivateRoute path="/books/:id" component={Books} />
+            <PrivateRoute path="/Category-:category" component={Category} />
+            <PrivateRoute path="/books-:id" component={Books} />
           </Switch>
         </AuthProvider>
       </Router>
-</div>
+    </div>
 
   );
 }
