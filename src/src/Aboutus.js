@@ -9,14 +9,14 @@ function Aboutus() {
             <div class="aboutus">
               <h2 class="aboutus-title">About Us</h2>
               <p class="aboutus-text">
-                Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor
-                eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante,
-                dapibus in.
+              Starting in 2021 our goal is to bring the best review, 
+              recommended book for bookworms all over the world.
               </p>
               <p class="aboutus-text">
-                This is Photoshop's version of Lorem Ipsum. Proin gravida nibh
-                vel velit auctor aliquet. Aenean sollicitudin, lorem quis
-                bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
+              The book categories are various so that you can easily 
+              reach the books you want to read at the moment or for the 
+              future. Besides, we also provides link which you can choose 
+              to buy book or e-book.
               </p>
             </div>
           </div>
