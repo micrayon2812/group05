@@ -14,7 +14,7 @@ const Category = () => {
 
             {docs && docs.map(doc => (
                 <div className="img-wrap" key={doc.id}>
-                    <a href={`/books/${doc.id}`}><img src={doc.Cover} alt="uploaded pic" /></a>
+                    <a href={`/books-${doc.id}`}><img src={doc.Cover} alt="uploaded pic" /></a>
                 </div>
             ))}
 
