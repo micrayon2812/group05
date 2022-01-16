@@ -44,7 +44,7 @@ function App() {
           <Route exact path="/MyBook" component={Mybook} />
           <Route exact path="/ProfileAbout" component={ProfileAbout} />
           <Route exact path="/ProfileEdit" component={ProfileEdit} />
-          <Route exact path="/Category/:category" component={Category} />
+          <Route exact path="/Category-:category" component={Category} />
           <Route exact path="/books/:id" component={Books} />
         </Switch>
       </AuthProvider>

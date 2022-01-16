@@ -31,7 +31,7 @@ function Navbar() {
                                             <div class="row d-flex tab">
                                                 <div class="fa-icon text-center"> <span class="fa fa-music"></span> </div>
 
-                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category/ArtsMusic">
+                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category-ArtsMusic">
 
                                                     <h6 class="mb-0"> Arts &amp; Music</h6> <small class="text-light">Click here for more</small>
                                                 </a> </div>
@@ -41,7 +41,7 @@ function Navbar() {
                                             <div class="row d-flex tab">
                                                 <div class="fa-icon text-center"> <span class="fa fa-pencil  "></span> </div>
 
-                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category/Biographies">
+                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category-Biographies">
 
                                                     <h6 class="mb-0">Biographies</h6> <small class="text-light">Click here for more</small>
                                                 </a> </div>
@@ -50,7 +50,7 @@ function Navbar() {
                                             <div class="row d-flex tab">
                                                 <div class="fa-icon text-center"> <span class="fa fa-gamepad"></span> </div>
 
-                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category/Comics">
+                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category-Comics">
 
                                                     <h6 class="mb-0">Comics</h6> <small class="text-light">Click here for more</small>
                                                 </a> </div>
@@ -62,7 +62,7 @@ function Navbar() {
                                             <div class="row d-flex tab">
                                                 <div class="fa-icon text-center"> <span class="fa fa-desktop  "></span> </div>
 
-                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category/ComputersvsTech">
+                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category-ComputersvsTech">
 
                                                     <h6 class="mb-0">Computers 	&amp; Tech</h6><small class="text-light">Click here for more</small>
                                                 </a> </div>
@@ -72,7 +72,7 @@ function Navbar() {
                                             <div class="row d-flex tab">
                                                 <div class="fa-icon text-center"> <span class="fa fa-apple  "></span> </div>
 
-                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category/Cooking">
+                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category-Cooking">
 
                                                     <h6 class="mb-0">Cooking</h6> <small class="text-light">Click here for more</small>
                                                 </a> </div>
@@ -82,7 +82,7 @@ function Navbar() {
                                             <div class="row d-flex tab">
                                                 <div class="fa-icon text-center"> <span class="fa fa-book  "></span> </div>
 
-                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category/Edu Reference">
+                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category-EduReference">
 
                                                     <h6 class="mb-0">Edu &amp; Reference</h6> <small class="text-light">Click here for more</small>
                                                 </a> </div>
@@ -94,7 +94,7 @@ function Navbar() {
                                             <div class="row d-flex tab">
                                                 <div class="fa-icon text-center"> <span class="fa fa-camera-retro "></span> </div>
 
-                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category/Entertainment">
+                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category-Entertainment">
 
                                                     <h6 class="mb-0">Entertainment</h6> <small class="text-light">Click here for more</small>
                                                 </a> </div>
@@ -104,7 +104,7 @@ function Navbar() {
                                             <div class="row d-flex tab">
                                                 <div class="fa-icon text-center"> <span class="fa fa-genderless  "></span> </div>
 
-                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category/GayLesbian">
+                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category-GayLesbian">
 
                                                     <h6 class="mb-0">Gay &amp; Lesbian</h6> <small class="text-light">Click here for more</small>
                                                 </a> </div>
@@ -114,7 +114,7 @@ function Navbar() {
                                             <div class="row d-flex tab">
                                                 <div class="fa-icon text-center"> <span class="fa fa-medkit  "></span> </div>
 
-                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category/Health">
+                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category-Health">
 
                                                     <h6 class="mb-0">Health</h6> <small class="text-light">Click here for more</small>
                                                 </a> </div>
@@ -126,7 +126,7 @@ function Navbar() {
                                             <div class="row d-flex tab">
                                                 <div class="fa-icon text-center"> <span class="fa fa-snapchat-ghost"></span> </div>
 
-                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category/Horror">
+                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category-Horror">
 
                                                     <h6 class="mb-0">Horror</h6> <small class="text-light">Click here for more</small>
                                                 </a> </div>
@@ -136,7 +136,7 @@ function Navbar() {
                                             <div class="row d-flex tab">
                                                 <div class="fa-icon text-center"> <span class="fa fa-smile-o"></span> </div>
 
-                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category/Kids">
+                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category-Kids">
 
                                                     <h6 class="mb-0">Kids</h6> <small class="text-light">Click here for more</small>
                                                 </a> </div>
@@ -146,7 +146,7 @@ function Navbar() {
                                             <div class="row d-flex tab">
                                                 <div class="fa-icon text-center"> <span class="fa fa-bookmark  "></span> </div>
 
-                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category/Literature Fiction">
+                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category-LiteratureFiction">
 
                                                     <h6 class="mb-0">Literature &amp; Fiction</h6> <small class="text-light">Click here for more</small>
                                                 </a> </div>
@@ -158,7 +158,7 @@ function Navbar() {
                                             <div class="row d-flex tab">
                                                 <div class="fa-icon text-center"> <span class="fa fa-question  "></span> </div>
 
-                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category/Mysteries">
+                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category-Mysteries">
 
                                                     <h6 class="mb-0">Mysteries</h6> <small class="text-light">Click here for more</small>
                                                 </a> </div>
@@ -168,7 +168,7 @@ function Navbar() {
                                             <div class="row d-flex tab">
                                                 <div class="fa-icon text-center"> <span class="fa fa-book  "></span> </div>
 
-                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category/Religion">
+                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category-Religion">
 
                                                     <h6 class="mb-0">Religion</h6> <small class="text-light">Click here for more</small>
                                                 </a> </div>
@@ -178,7 +178,7 @@ function Navbar() {
                                             <div class="row d-flex tab">
                                                 <div class="fa-icon text-center"> <span class="fa fa-heartbeat  "></span> </div>
 
-                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category/Romance">
+                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category-Romance">
 
                                                     <h6 class="mb-0">Romance</h6> <small class="text-light">Click here for more</small>
                                                 </a> </div>
@@ -191,7 +191,7 @@ function Navbar() {
                                             <div class="row d-flex tab">
                                                 <div class="fa-icon text-center"> <span class="fa fa-flask  "></span> </div>
 
-                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category/Sci-FiFantasy">
+                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category-Sci-FiFantasy">
 
                                                     <h6 class="mb-0">Sci-Fi &amp; Fantasy</h6> <small class="text-light">Click here for more</small>
                                                 </a> </div>
@@ -201,7 +201,7 @@ function Navbar() {
                                             <div class="row d-flex tab">
                                                 <div class="fa-icon text-center"> <span class="fa fa-balance-scale   "></span> </div>
 
-                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category/ScienceMath">
+                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category-ScienceMath">
 
                                                     <h6 class="mb-0">Science &amp; Math</h6> <small class="text-light">Click here for more</small>
                                                 </a> </div>
@@ -211,7 +211,7 @@ function Navbar() {
                                             <div class="row d-flex tab">
                                                 <div class="fa-icon text-center"> <span class="fa fa-futbol-o "></span> </div>
 
-                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category/Sports">
+                                                <div class="d-flex flex-column"> <a class="dropdown-item" href="/Category-Sports">
 
                                                     <h6 class="mb-0">Sports</h6> <small class="text-light">Click here for more</small>
                                                 </a> </div>
