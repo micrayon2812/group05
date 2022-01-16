@@ -64,9 +64,7 @@ function Aboutus() {
                   <div class="feature-content">
                     <h4>Great support</h4>
                     <p>
-                      Aenean vulputate eleifend tellus. Aenean leo ligula,
-                      porttitor eu, consequat vitae, eleifend ac, enim. Aliquam
-                      lorem ante, dapibus in.
+                    If you have any question or feedback, feel free to contact us.
                     </p>
                   </div>
                 </div>
