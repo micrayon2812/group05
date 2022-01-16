@@ -1,14 +1,32 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import logo from "./img/logo_200x200.png";
 import { VscAccount } from "react-icons/vsc";
 import { BsBook } from "react-icons/bs";
 import { IconContext } from 'react-icons/lib';
+import {useAuth} from "./contexts/AuthContext";
+import { useHistory } from "react-router-dom"
 
 
 function Navbar() {
     const icon = { color: "white", fontSize: "1.5em" }
+
+    const [error, setError] = useState("")
+    const { currentUser, logout } = useAuth()
+    const history = useHistory()
+
+
+    async function handleLogout() {
+        setError("")
+    
+        try {
+          await logout()
+          history.push("/Login")
+        } catch {
+          setError("Failed to log out")
+        }
+      }
 
     return (
         <div class="container-fluid1 px-0 ">
@@ -277,7 +295,7 @@ function Navbar() {
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/MyBook">My book</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="/">Log out</a>
+                            <a class="dropdown-item" onClick={handleLogout}>Log out</a>
                             <div class="dropdown-divider"></div>
                         </div>
                     </div>

@@ -15,6 +15,8 @@ function Login() {
     async function handleSubmit(e) {
         e.preventDefault()
         try {
+            setError("")
+            setLoading(true)
             await login(emailRef.current.value, passwordRef.current.value)
             history.push("/Home")
         } catch {
@@ -52,9 +54,6 @@ function Login() {
                                 <div class="line"></div> <small class="or text-center">Or</small>
                                 <div class="line"></div>
                             </div>
-                            <div class="form-group px-3" id="username"> <label class="mb-1">
-                                    <h6 class="mb-0 text-sm">User Name</h6>
-                                </label> <input class="form-control mb-4" type="text" name="username" placeholder="Enter the name you want to show" required/> </div>
                             <div class="form-group px-3" id="email"> <label class="mb-1">
                                     <h6 class="mb-0 text-sm">Email Address</h6>
                                 </label> <input class="form-control mb-4" type="text" ref={emailRef} name="email" placeholder="Enter a valid email address" required/> </div>
@@ -65,7 +64,7 @@ function Login() {
                                 <div class="form-check custom-control custom-checkbox custom-control-inline"> <input id="chk1" type="checkbox" name="chk" class="custom-control-input" /> <label for="chk1" class="form-check-label custom-control-label text-sm">Remember me</label> </div> 
                             </div>
                             {error && <Alert variant="danger">{error}</Alert>}
-                            <div class="row mb-3 px-3" style={{color:`white`}}> <button type="submit" class="btn btn-blue text-center" disable={loading}><a href="/Home">Log in</a></button></div>
+                            <div class="row mb-3 px-3" style={{color:`white`}}> <button type="submit" class="btn btn-blue text-center" disable={loading} to="/Home">Log in</button></div>
                             <div class="row mb-4 px-3"> <small class="font-weight-bold">Don't have an account? <Link class="text-danger" to="/Signup">Register</Link></small> </div>
                         </form>
                     </div>

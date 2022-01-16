@@ -29,12 +29,12 @@ function Signup() {
     async function handleSubmit(e) {
         e.preventDefault()
         if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-            setError('')
-            setLoading(true)
             return setError('Password does not match')
         }
 
         try {
+            setError("")
+            setLoading(true)
             await signup(emailRef.current.value, passwordRef.current.value)
             createprofile(emailRef.current.value)
             history.push("/Login")
@@ -74,9 +74,6 @@ function Signup() {
                                 <div class="line"></div> <small class="or text-center">Or</small>
                                 <div class="line"></div>
                             </div>
-                            <div class="form-group px-3" id="username"> <label class="mb-1">
-                                    <h6 class="mb-0 text-sm">User Name</h6>
-                                </label> <input class="form-control mb-4" type="text" name="username" placeholder="Enter the name you want to show" required/> </div>
                             <div class="form-group px-3" id="email"> <label class="mb-1">
                                     <h6 class="mb-0 text-sm">Email Address</h6>
                                 </label> <input class="form-control mb-4" type="text" ref={emailRef} name="email" placeholder="Enter a valid email address" required/> </div>
