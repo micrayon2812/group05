@@ -72,7 +72,7 @@ const Books = () => {
     };
     return (
         < div >
-            <div className="body"  >
+            <div className="body1"  >
                 <div className="flex-1-row">
                     <img src={data?.Cover} className="Cover" />
                     <div className="info">
