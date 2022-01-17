@@ -26,8 +26,8 @@ function App() {
       <Router>
         <AuthProvider>
           <Route exact path="/" exact component={Login} />
-          {path !== '/' && path !== '/Signup' && path !== '/Login' &&
-            <div>
+          {path !== '/' && path !== '/Signup' && path !== '/Login' && path !== '/Home' &&
+            < div >
               <Navbar />
             </div>
           }
@@ -52,7 +52,7 @@ function App() {
           </Switch>
         </AuthProvider>
       </Router>
-    </div>
+    </div >
 
   );
 }

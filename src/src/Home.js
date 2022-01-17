@@ -23,7 +23,8 @@ function Home() {
           var data = element.data();
           if (data.Name == s) {
             var str = window.location.href;
-            var string = str.replace('/Home', '') + '/books-' + element.id;
+            var strdelete = str.substring(str.indexOf("/") + 1);
+            var string = str.replace('/' + strdelete, '') + '/books-' + element.id;
             console.log("string", string);
             window.open(string, "_blank");
           }
@@ -31,8 +32,8 @@ function Home() {
       });
   }
   return (
-
     <body>
+      <Navbar />
       <div style={{
         backgroundImage: `url(${Background})`, backgroundSize: `100%`, backgroundRepeat: `no-repeat`, height: '370px'
       }}>

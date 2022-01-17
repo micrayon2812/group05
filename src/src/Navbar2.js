@@ -2,9 +2,32 @@ import React from "react";
 import { BiSearchAlt } from "react-icons/bi";
 import { BsBook } from "react-icons/bs";
 import logo from "./img/logo.png"
+import { database } from "./Database/Firebase";
+import "./Navbar.css";
+
 function Navbar2() {
   const icon = { color: "#2833ad", fontSize: "1.5em" }
-
+  const search = () => {
+    var s;
+    if (document.getElementById("txtname") != null) { s = document.getElementById("txtname").value; }
+    else { s = null; }
+    console.log("s", s);
+    database
+      .collection("Books")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((element) => {
+          var data = element.data();
+          if (data.Name == s) {
+            var str = window.location.href;
+            var strdelete = str.substring(str.indexOf("/") + 1);
+            var string = str.replace('/' + strdelete, '') + '/books-' + element.id;
+            console.log("string", string);
+            window.open(string, "_blank");
+          }
+        });
+      });
+  }
   return (
     <div>
       <nav class="navbar navbar-dark navbar-expand p-0 bg-dark " ></nav>
@@ -18,14 +41,14 @@ function Navbar2() {
               <div class="d-flex form-inputs">
 
                 <input
+                  id="txtname"
                   class="form-control"
                   type="text"
                   placeholder="Search any book..."
                 />
-                <a href="./Category">
-                  <BiSearchAlt size="50px" style={{ padding: `10px` }} />
-
-                </a>
+                <button className="logosearch" type="button" onClick={search}>
+                  <BiSearchAlt size="30px" style={{ alignItems: "center", textAlign: "center", paddingTop: `5px` }} />
+                </button>
               </div>
             </div>
           </div>
